@@ -17,6 +17,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
+      
       <Navbar /> {/* Navbar will be excluded from specific routes if needed */}
       <Routes>
         {/* Exclude Navbar for ResumeMaker route */}
