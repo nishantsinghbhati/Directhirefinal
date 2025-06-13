@@ -57,9 +57,9 @@ const StorySection = ({ title, text, image, reverse, style }) => (
 );
 
 const HeroSection = () => (
-  <header className="relative sm:mt-0 h-screen flex items-center justify-center">
+  <header className="relative sm:mt-0 h-screen flex   items-center justify-center">
     <div className="text-black text-center px-4">
-      <div className="max-w-5xl mx-auto mb-20" style={{ position: 'relative' }}>
+      <div className="max-w-5xl mx-auto mb-20 " style={{ position: 'relative' }}>
         <TextPressure
           text="About us"
           flex={true}
@@ -80,13 +80,15 @@ const HeroSection = () => (
 );
 
 const AboutUs = () => {
+    console.log("Helmet rendering");
+
   return (
-    <div>
+   <>
        <Helmet>
-        <title>ABOUTUS | DirectHire</title>
-        <meta name="description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
-        <meta name="keywords" content="resume builder, job portal, hire talent, job seeker tools" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>About Us | Direct Hire</title>
+        <meta name="description" content="Learn more about Direct Hire’s story, mission, and the team behind the hiring revolution." />
+        <meta property="og:title" content="About Us | Direct Hire" />
+        <meta property="og:description" content="Discover our journey, values, and the people powering our hiring platform." />
       </Helmet>
 
 
@@ -135,7 +137,7 @@ const AboutUs = () => {
       <footer>
         <Footer />
       </footer>
-    </div>
+    </>
   );
 };
 

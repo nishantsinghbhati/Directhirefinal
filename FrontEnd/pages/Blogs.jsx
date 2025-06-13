@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet-async";
+import Footer from "../section/footer.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const blogs = [
@@ -140,6 +142,13 @@ const BlogCard = ({ title, preview, content, index }) => {
 
 const BlogPage = () => {
   return (
+    <>
+    
+       <Helmet>
+        <title>Blogs | DirectHire</title>
+
+      </Helmet>
+
     <div className="relative min-h-screen bg-white text-black overflow-x-hidden">
       <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 via-white to-blue-100 opacity-30 animate-pulse z-0" />
 
@@ -158,6 +167,9 @@ const BlogPage = () => {
         ))}
       </div>
     </div>
+      <footer>
+            <Footer />
+          </footer></>
   );
 };
 
