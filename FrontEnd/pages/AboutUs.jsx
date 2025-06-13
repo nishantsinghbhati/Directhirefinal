@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import DotGrid from "../components/Dotgrid.jsx";
 import Experience from "../section/Experience.jsx";
 import TextPressure from "../components/AboutusText.jsx";
-import OurTeam from "../section/OurTeam.jsx";
+import ProfileCard from "../section/OurTeam.jsx";
 import Footer from "../section/footer.jsx";
 import IndustrySpecializations from "../section/Sectors.jsx";
 import TestimonialSection from "../section/Testimonials.jsx";
@@ -125,8 +125,22 @@ const AboutUs = () => {
           <Experience />
         </motion.section>
 
-        <section>
-          <OurTeam />
+        <section className="relative h-[700px] overflow-hidden justify-center items-center flex ">
+  
+  
+<ProfileCard
+  name="Ayushi Agarwal"
+  title="Founder"
+  handle="AyushiAgarwal"
+  status="Online"
+  contactText="Contact Me"
+  avatarUrl="../src/assets/logo.png"
+  showUserInfo={true}
+  enableTilt={true}
+  onContactClick={() => console.log('Contact clicked')}
+  grainUrl = "./grain.webp"
+  iconUrl = "../src/assets/logo.png"
+/>
         </section>
 
         <section>
