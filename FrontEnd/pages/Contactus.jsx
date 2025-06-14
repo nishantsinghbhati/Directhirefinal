@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Footer from '../section/footer';
-import TextPressure from '../components/AboutusText';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormSubmit } from "../hooks/useFormSubmit.js";
 import { contactusSchema } from "../src/schema/contactusSchema.js";
@@ -37,22 +36,11 @@ const ContactUs = () => {
   return (
     <contact>
       <div className='text-4xl font-bold text-center mb-4 px-6 pt-20 max-w-5xl mx-auto' style={{position: 'relative',}}>
-        <TextPressure
-          text="contact Us"
-          flex={true}
-          alpha={false}
-          stroke={true}
-          width={true}
-          weight={true}
-          italic={true}
-          textColor="#1447e6"
-         
-          minFontSize={36}
-        />
+      <h1 className='text-8xl font-[ClashDisplay-Semibold]'>CONTACT <span className='text-blue-700'>US</span></h1>
       </div>
     <div className="min-h-fit flex flex-col lg:flex-row items-center justify-center p-6">
       <div className="lg:w-1/2 p-8">
-        <h1  className="text-4xl font-bold mb-6">Reach Out to <span className='text-blue-700'>Us</span> </h1>
+        <h2  className="text-4xl font-bold mb-6">Reach Out to Us</h2>
         <p  className="mb-4 text-gray-600">
           We would love to hear from you! Whether it's feedback, a query, or just to say hi, feel free to get in touch.
         </p>

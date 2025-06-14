@@ -1,90 +1,167 @@
 import express from "express";
 import multer from "multer";
-import { sendMail } from "../mailer.js";
 import { sendWhatsApp } from "../whatsapp.js";
-
+import Contact from "../models/Contact.js";
+import Hire from "../models/Hire.js";
+import Job from "../models/Job.js";
+import { google } from "googleapis";
+import path from "path";
+import stream from "stream"; 
 const router = express.Router();
-
-// Multer config (only for job route)
-const storage = multer.diskStorage({
-  destination: "uploads/",
-  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
-});
 const upload = multer({ storage: multer.memoryStorage() });
 
+// Google Drive setup
+const SERVICE_ACCOUNT_FILE = path.join(process.cwd(), "directhire-service-account.json");
+const FOLDER_ID = "1Epx5pn7xGVUBWCZ-eqQitdHM_4t5f_gE"; // Replace with your actual folder ID
+
+async function uploadToGoogleDrive(file) {
+  const auth = new google.auth.GoogleAuth({
+    keyFile: SERVICE_ACCOUNT_FILE,
+    scopes: ["https://www.googleapis.com/auth/drive"]
+  });
+
+  const drive = google.drive({ version: "v3", auth });
+
+  // ✅ Convert buffer to stream
+  const bufferStream = new stream.PassThrough();
+  bufferStream.end(file.buffer);
+
+  const res = await drive.files.create({
+    requestBody: {
+      name: file.originalname,
+      parents: [FOLDER_ID],
+    },
+    media: {
+      mimeType: file.mimetype,
+      body: bufferStream, // ✅ MUST be a stream
+    },
+    fields: "id, name"
+  });
+
+  // Make file public
+  await drive.permissions.create({
+    fileId: res.data.id,
+    requestBody: {
+      role: "reader",
+      type: "anyone"
+    }
+  });
+
+  const publicUrl = `https://drive.google.com/uc?id=${res.data.id}&export=download`;
+  return { link: publicUrl, filename: res.data.name };
+}
 
 // ------------------ ROUTES ------------------
 
-// 🟢 Contact Form (No File)
+// 🟢 Contact Form
 router.post("/contact", async (req, res) => {
   const { name, phone, email, message } = req.body;
 
   try {
-    await sendMail({
-      subject: "New Contact Form",
-      body: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    // Save to MongoDB
+    const contact = new Contact({
+      name,
+      phone,
+      email,
+      message
     });
-    res.status(200).send("Contact form submitted");
+    await contact.save();
+
+    // Send WhatsApp notification
+    await sendWhatsApp({
+      name,
+      phone,
+      email,
+      message,
+      type: "contact"
+    });
+
+    res.status(200).json({ message: "Contact form submitted successfully" });
   } catch (err) {
-    res.status(500).send("Failed to send contact form");
+    console.error(err);
+    res.status(500).json({ error: "Failed to submit contact form" });
   }
 });
 
-// 🟢 Hire Talent (❌ No Resume Upload)
+// 🟢 Hire Talent
 router.post("/hire", async (req, res) => {
   const { name, email, company, message } = req.body;
 
   try {
-    await sendMail({
-      subject: "Hire Talent Form",
-      body: `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nMessage: ${message}`,
+    // Save to MongoDB
+    const hire = new Hire({
+      name,
+      email,
+      company,
+      message
+    });
+    await hire.save();
+
+    // Send WhatsApp notification
+    await sendWhatsApp({
+      name,
+      email,
+      type: "hire",
+      company,
+      message
     });
 
-    await sendWhatsApp({ name, email, type: "hire", company, message });
-
-    res.status(200).send("Hire form submitted");
+    res.status(200).json({ message: "Hire form submitted successfully" });
   } catch (err) {
-    res.status(500).send("Failed to send hire form");
+    console.error(err);
+    res.status(500).json({ error: "Failed to submit hire form" });
   }
 });
 
-// 🟢 Job Seeker Form (✅ With Resume Upload)
+// 🟢 Job Seeker Form
 router.post("/job", upload.single("resume"), async (req, res) => {
-  const { fullname, dob, email, phone,city,currentctc,expectedctc,gender,company,experience ,education } = req.body;
+  const { fullname, dob, email, phone, city, currentctc, expectedctc, gender, company, experience, education } = req.body;
   const resumeFile = req.file;
 
   try {
-    await sendMail({
-      subject: "Job Seeker Form",
-      body: `Fullname: ${fullname}\nDob: ${dob}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city}\nCurrentctc: ${currentctc}\nExpectedctc: ${expectedctc}\nGender: ${gender}\nCompany: ${company}\nExperience: ${experience}\nEducation: ${education}`,
-      attachment: {
-        filename: resumeFile.originalname,
-        content: resumeFile.buffer,
-      },
-    });
+    let resumeData = null;
+    if (resumeFile) {
+      resumeData = await uploadToGoogleDrive(resumeFile);
+    }
 
+    // Save to MongoDB
+    const job = new Job({
+      fullname,
+      dob,
+      email,
+      phone,
+      city,
+      currentctc,
+      expectedctc,
+      gender,
+      company,
+      experience,
+      education,
+      resume: resumeData
+    });
+    await job.save();
+
+    // Send WhatsApp notification
     await sendWhatsApp({
-     fullname,
-     dob,
-     email, 
-     phone,
-     city,
-     currentctc,
-     expectedctc,
-     gender,
-     company,
-     experience ,
-     education ,
-     type: "job",
-      // resumeFile.buffer can be used if your WhatsApp API supports it
+      fullname,
+      dob,
+      email,
+      phone,
+      city,
+      currentctc,
+      expectedctc,
+      gender,
+      company,
+      experience,
+      education,
+      type: "job"
     });
 
-    res.status(200).send("Job seeker form submitted");
+    res.status(200).json({ message: "Job seeker form submitted successfully" });
   } catch (err) {
     console.error(err);
-    res.status(500).send("Failed to send job seeker form");
+    res.status(500).json({ error: "Failed to submit job seeker form" });
   }
 });
-
 
 export default router;

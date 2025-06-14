@@ -62,29 +62,90 @@ export default function IndustrySpecializations() {
     loadSwiper();
   }, []);
 
-  // Circle dash style setup
+  // Circle dash style setup - Initialize stroke animation
   useEffect(() => {
     circleRefs.current.forEach((circle, index) => {
       if (circle) {
         const r = parseFloat(circle.getAttribute('r'));
         const rlen = 2 * Math.PI * r;
         circle.style.strokeDasharray = `${rlen}px`;
+        // Initially hide all strokes
         circle.style.strokeDashoffset = `${rlen}px`;
       }
     });
-  }, []);
+  }, [SwiperComponents]); // Run after Swiper is loaded
 
+  // Animate the stroke of the active circle
   useEffect(() => {
     circleRefs.current.forEach((circle, index) => {
       if (circle) {
         const r = parseFloat(circle.getAttribute('r'));
         const rlen = 2 * Math.PI * r;
-        circle.style.transition = 'stroke-dashoffset 2.3s ease-out, stroke 0.3s ease-in-out';
-        circle.style.strokeDashoffset = index === activeIndex ? '0px' : `${rlen}px`;
-        circle.style.stroke = index === activeIndex ? '#2D6CDF' : 'transparent';
+        
+        if (index === activeIndex) {
+          // Animate to show stroke for the active circle
+          circle.style.transition = 'stroke-dashoffset 2.3s ease-out, stroke 0.3s ease-in-out';
+          circle.style.strokeDashoffset = '0px';
+          circle.style.stroke = '#2D6CDF'; // Active stroke color
+        } else {
+          // Hide stroke for inactive circles
+          circle.style.transition = 'stroke-dashoffset 2.3s ease-out, stroke 0.3s ease-in-out';
+          circle.style.strokeDashoffset = `${rlen}px`;
+          circle.style.stroke = 'transparent'; // Inactive stroke color
+        }
       }
     });
-  }, [activeIndex]);
+  }, [activeIndex]); // Re-run when activeIndex changes
+
+  // Apply custom navigation styles
+  useEffect(() => {
+    if (!SwiperComponents) return;
+
+    const applyNavigationStyles = () => {
+      const prevButton = document.querySelector('.mySwiper .swiper-button-prev');
+      const nextButton = document.querySelector('.mySwiper .swiper-button-next');
+      
+      const buttonStyles = {
+        width: '40px',
+        height: '40px',
+        borderRadius: '50%',
+        backgroundColor: '#2D6CDF',
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'background-color 0.3s ease, color 0.3s ease',
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        zIndex: 10,
+        border: 'none',
+        cursor: 'pointer'
+      };
+      
+      if (prevButton) {
+        Object.assign(prevButton.style, { ...buttonStyles, left: '0' });
+        prevButton.style.setProperty('--swiper-navigation-size', '0px');
+        prevButton.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+      
+      if (nextButton) {
+        Object.assign(nextButton.style, { ...buttonStyles, right: '0' });
+        nextButton.style.setProperty('--swiper-navigation-size', '0px');
+        nextButton.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+    };
+
+    const timer = setTimeout(applyNavigationStyles, 100);
+    
+    const handleResize = () => applyNavigationStyles();
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [SwiperComponents]);
 
   if (!SwiperComponents) return null;
 
@@ -92,10 +153,6 @@ export default function IndustrySpecializations() {
 
   return (
     <section className="relative sm:min-h-screen flex flex-col justify-center items-center z-20 text-gray-800">
-      <style>{`
-       
-      `}</style>
-
       <div className="container max-w-screen-xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

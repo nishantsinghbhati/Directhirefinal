@@ -60,18 +60,7 @@ gsap.fromTo(".form-field",
      
         
            <div className='text-4xl font-bold text-center mb-4 px-6 pt-20 max-w-5xl mx-auto' style={{position: 'relative',}}>
-  <TextPressure
-    text="FIND JOB"
-    flex={true}
-    alpha={false}
-    stroke={true}
-    width={true}
-    weight={true}
-    italic={true}
-    textColor="#1447e6"
-   
-    minFontSize={36}
-  />
+  <h1 className='text-8xl font-[ClashDisplay-Semibold]'>JOB <span className='text-blue-700'>SEEKER</span></h1>
 </div><div className='flex flex-col lg:flex-row items-center mx-11 gap-7 justify-evenly '>
     <motion.div className="form-container opacity-100 max-w-fit min-h-fit sm:items-start items-center    flex flex-col justify-center   p-6 bg-white rounded-xl shadow-md">
       <h2 className="form-title text-2xl text-center font-bold mb-6">Job Seeker <span className='text-blue-700'> Application</span></h2>

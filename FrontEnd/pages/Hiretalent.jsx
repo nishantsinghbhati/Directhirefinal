@@ -35,19 +35,7 @@ export default function HireTalentPage() {
   return (
     <div className=" bg-blue-200">
         <div className='text-4xl font-bold text-center mb-4 px-6 pt-20 max-w-5xl mx-auto' style={{position: 'relative',}}>
-  <TextPressure
-    text="Hire Talent
-"
-    flex={true}
-    alpha={false}
-    stroke={true}
-    width={true}
-    weight={true}
-    italic={true}
-    textColor="#1447e6"
-   
-    minFontSize={36}
-  />
+ <h1 className='text-8xl font-[ClashDisplay-Semibold]'>HIRE <span className='text-blue-700'>TALENT</span></h1>
 </div>
     <div className="min-h-screen lg:flex-row flex items-center justify-evenly px-4 py-12">
               
@@ -58,9 +46,9 @@ export default function HireTalentPage() {
         transition={{ duration: 1 }}
         className="bg-white  rounded-2xl shadow-xl min-h-fit max-w-full p-8 border border-gray-300"
       >
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
-          Hire <span className="text-blue-700"> Talent</span>
-        </h1>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
+          Hire Talent
+        </h2>
 
          <form  className="space-y-2 min-w-full" onSubmit={handleSubmit((data) => onSubmit(data, reset))}>
            <div>

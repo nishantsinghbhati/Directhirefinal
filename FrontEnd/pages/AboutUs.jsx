@@ -125,7 +125,7 @@ const AboutUs = () => {
           <Experience />
         </motion.section>
 
-        <section className="relative h-[700px] overflow-hidden justify-center items-center flex ">
+        <section className="relative min-h-[625px] overflow-hidden justify-center items-center flex ">
   
   
 <ProfileCard
@@ -134,7 +134,7 @@ const AboutUs = () => {
   handle="AyushiAgarwal"
   status="Online"
   contactText="Contact Me"
-  avatarUrl="../src/assets/logo.png"
+  avatarUrl="./pf.png"
   showUserInfo={true}
   enableTilt={true}
   onContactClick={() => console.log('Contact clicked')}
