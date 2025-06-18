@@ -152,7 +152,7 @@ export default function IndustrySpecializations() {
   const { Swiper, SwiperSlide, Navigation, Autoplay } = SwiperComponents;
 
   return (
-    <section className="relative sm:min-h-screen flex flex-col justify-center items-center z-20 text-gray-800">
+    <section className="relative sm:min-h-[800px] flex flex-col justify-center items-center z-20 text-gray-800">
       <div className="container max-w-screen-xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

@@ -57,14 +57,16 @@ const ResumeTemplate = ({ data }) => {
         </Box>
 
         <Section>
-          <Typography variant="subtitle1" gutterBottom>Contact</Typography>
-          <Typography variant="body2">📞 {personalInfo.phone}</Typography>
-          <Typography variant="body2">✉️ {personalInfo.email}</Typography>
-          <Typography variant="body2">📍 {personalInfo.location}</Typography>
+          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Contact</Typography>
+          <hr />
+          <Typography variant="body2">Phone <br />{personalInfo.phone}</Typography>
+          <Typography variant="body2">Email <br /> {personalInfo.email}</Typography>
+          <Typography variant="body2">Location <br /> {personalInfo.location}</Typography>
         </Section>
 
         <Section>
-          <Typography variant="subtitle1" gutterBottom>Education</Typography>
+          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Education</Typography>
+          <hr />
           {education.map((edu, i) => (
             <Box key={i} mb={1}>
               <Typography variant="body2" style={{ fontWeight: 'bold' }}>{edu.startDate}</Typography>
@@ -75,14 +77,16 @@ const ResumeTemplate = ({ data }) => {
         </Section>
 
         <Section>
-          <Typography variant="subtitle1" gutterBottom>Expertise</Typography>
+          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Expertise</Typography>
+          <hr />
           <BulletList>
             {skills.map((skill, i) => <li key={i}><Typography variant="body2">{skill}</Typography></li>)}
           </BulletList>
         </Section>
 
         <Section>
-          <Typography variant="subtitle1" gutterBottom>Language</Typography>
+          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Language</Typography>
+          <hr />
           <BulletList>
             {languages.map((lang, i) => <li key={i}><Typography variant="body2">{lang.language}</Typography></li>)}
           </BulletList>
@@ -95,7 +99,8 @@ const ResumeTemplate = ({ data }) => {
         </Section>
 
         <Section>
-          <Typography variant="h6" gutterBottom>Experience</Typography>
+          <Typography className='text-3xl ' variant="h6" gutterBottom>Experience</Typography>
+          <hr className='bg-black mt-6' />
           {experience.map((exp, i) => (
             <Box key={i} mb={2}>
               <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>{exp.startDate} - {exp.endDate}</Typography>

@@ -6,12 +6,12 @@ import { links } from "../constants";
 const socialLinks = [
   {
     icon: <Mail className="w-6 h-6 transition-transform duration-300 group-hover:scale-125" />,
-    href: "mailto:yourcompany@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&to=ayushi@directhire.in",
     label: "Email Us",
   },
   {
     icon: <Linkedin className="w-6 h-6 transition-transform duration-300 group-hover:scale-125" />,
-    href: "https://linkedin.com/in/yourprofile",
+    href: "https://www.linkedin.com/company/directhire15/?viewAsMember=true ",
     label: "LinkedIn Profile",
   },
 ];
@@ -58,14 +58,14 @@ export default function Footer() {
           {/* Quick Links */}
           <div ref={quickLinksRef} className="text-center md:text-left">
             <h3 className="text-xl font-semibold mb-5 text-white border-b-2 border-blue-400 pb-2 inline-block">Explore</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 ">
               {links.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
                     className="group text-blue-100 hover:text-white transition-all duration-300 transform hover:translate-x-1 hover:scale-105 flex items-center justify-center md:justify-start"
                   >
-                    <span className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">&gt;</span>
+                    <span className="mr-2 opacity-0  group-hover:opacity-100 transition-opacity duration-300">&gt;</span>
                     {link.name}
                   </a>
                 </li>
@@ -105,15 +105,15 @@ export default function Footer() {
             <div className="space-y-3 text-blue-100">
               <p className="flex items-center justify-center md:justify-start">
                 <MapPin className="w-5 h-5 mr-3 text-blue-300 flex-shrink-0" />
-                <span>123 Global Avenue, Tech City, 98765</span>
+                <a href="https://maps.app.goo.gl/3yhYprcX3nPb52Co6"> 151, Padmavti Colony, Nirman Nagar, Ranisati Nagar, Jaipur, Rajasthan 302019</a>
               </p>
               <p className="flex items-center justify-center md:justify-start">
                 <Phone className="w-5 h-5 mr-3 text-blue-300 flex-shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-white transition-colors duration-200">(123) 456-7890</a>
+                <a href="tel:+91 079769 62153" className="hover:text-white transition-colors duration-200">079769 62153</a>
               </p>
               <p className="flex items-center justify-center md:justify-start">
                 <AtSign className="w-5 h-5 mr-3 text-blue-300 flex-shrink-0" />
-                <a href="mailto:info@directhire.com" className="hover:text-white transition-colors duration-200">info@directhire.com</a>
+                <a href="mailto:info@directhire.com" className="hover:text-white transition-colors duration-200">HR@directhire.in</a>
               </p>
             </div>
           </div>
@@ -121,7 +121,8 @@ export default function Footer() {
 
         {/* Bottom Line */}
         <div className="border-t border-blue-600 mt-16 pt-8 text-center text-sm text-blue-200">
-          © {new Date().getFullYear()} Direct Hire. All rights reserved.
+          © {new Date().getFullYear()} Direct Hire. All rights reserved. 
+          <a href="https://nishant-singh-bhati-portfolio.onrender.com/" target="_blank"> (Managed by vision)</a>
         </div>
       </div>
     </footer>

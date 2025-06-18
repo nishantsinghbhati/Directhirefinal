@@ -60,7 +60,7 @@ const HeroSection = () => (
   <header className="relative sm:mt-0 h-screen flex   items-center justify-center">
     <div className="text-black text-center px-4">
       <div className="max-w-5xl mx-auto mb-20 " style={{ position: 'relative' }}>
-        <TextPressure
+       <h1> <TextPressure
           text="About us"
           flex={true}
           alpha={false}
@@ -70,7 +70,7 @@ const HeroSection = () => (
           italic={true}
           textColor="#1447e6"
           minFontSize={36}
-        />
+        /></h1>
       </div>
       <p className="text-xl max-w-6xl mx-auto">
         At Direct Hire, everything began with a simple yet powerful observation. Ayushi, the founder, started her career in recruitment and quickly noticed a gap in the market — one that affected both sides of the hiring equation. On the client side, companies struggled to find candidates who truly matched their needs. On the candidate side, talented individuals were missing out on the right opportunities, not due to lack of skill, but due to lack of access. Ayushi realized that the system needed a bridge — something that genuinely connected the right talent to the right opportunity. That’s when Direct Hire was born.
@@ -125,9 +125,9 @@ const AboutUs = () => {
           <Experience />
         </motion.section>
 
-        <section className="relative min-h-[625px] overflow-hidden justify-center items-center flex ">
+        <section className="relative sm:min-h-[700px] overflow-hidden flex-col gap-6 justify-center items-center flex ">
   
-  
+  <h2 className="sm:text-8xl text-6xl font-[ClashDisplay-Semibold]">Fou <span className="text-blue-700">nder</span></h2>
 <ProfileCard
   name="Ayushi Agarwal"
   title="Founder"

@@ -5,18 +5,19 @@ import Contact from "../models/Contact.js";
 import Hire from "../models/Hire.js";
 import Job from "../models/Job.js";
 import { google } from "googleapis";
-import path from "path";
-import stream from "stream"; 
+import stream from "stream";
+
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Google Drive setup
-const SERVICE_ACCOUNT_FILE = path.join(process.cwd(), "directhire-service-account.json");
-const FOLDER_ID = "1Epx5pn7xGVUBWCZ-eqQitdHM_4t5f_gE"; // Replace with your actual folder ID
+const SERVICE_ACCOUNT_FILE = JSON.parse(
+  Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_KEY_BASE64, 'base64').toString('utf8')
+);
 
 async function uploadToGoogleDrive(file) {
   const auth = new google.auth.GoogleAuth({
-    keyFile: SERVICE_ACCOUNT_FILE,
+    credentials: SERVICE_ACCOUNT_FILE,
     scopes: ["https://www.googleapis.com/auth/drive"]
   });
 
@@ -29,7 +30,7 @@ async function uploadToGoogleDrive(file) {
   const res = await drive.files.create({
     requestBody: {
       name: file.originalname,
-      parents: [FOLDER_ID],
+      parents: [process.env.FOLDER_ID],
     },
     media: {
       mimeType: file.mimetype,
@@ -51,7 +52,7 @@ async function uploadToGoogleDrive(file) {
   return { link: publicUrl, filename: res.data.name };
 }
 
-// ------------------ ROUTES ------------------
+
 
 // 🟢 Contact Form
 router.post("/contact", async (req, res) => {

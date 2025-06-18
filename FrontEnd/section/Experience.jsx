@@ -137,7 +137,7 @@ export default function StatsSection() {
       >
   
       
-    <div className="min-h-[800px] items-center flex flex-col justify-center ">  
+    <div className="min-h-[750px]  items-center flex flex-col justify-center ">  
      <h1 ref={titleRef} className="text-center xl:text-8xl sm:text-5xl z-20 lg:text-8xl md:text-5xl text-4xl font-[ClashDisplay-Semibold] sm:pb-8 pb-5">
           Exper<span className="text-blue-700">ience</span> 
         </h1>

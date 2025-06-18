@@ -152,10 +152,11 @@ function Home() {
             size="large"
             sx={{
               mt: 4,
-              bgcolor: '#00ff99', // Bright green color
-              color: 'black',
+              bgcolor: '#1976d2', // Bright green color
+              color: 'white',
               '&:hover': {
-                bgcolor: '#00e68a', // Darker green on hover
+                bgcolor: '#ffffff',
+                color: 'black' // Darker green on hover
               },
               borderRadius: 25, // Pill shape
               padding: '12px 30px',
