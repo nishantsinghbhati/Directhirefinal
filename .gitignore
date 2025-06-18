@@ -57,3 +57,4 @@ coverage/
 # custom cache/temp folders
 .cache/
 tmp/
+Backend/directhire-service-account.json
