@@ -6,8 +6,8 @@ dotenv.config();
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect('mongodb+srv://directhire21:ULJd44Z0aqp6p5bq@directhire.vrozhnv.mongodb.net/?retryWrites=true&w=majority&appName=directhire');
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB Connected`);
     
     // Initialize GridFS after connection
   
