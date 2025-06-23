@@ -228,7 +228,7 @@ gsap.fromTo(".form-field",
         </motion.button></div>
       </form>
     </motion.div> </div>
-    <TestimonialSection/>
+    <TestimonialSection testimonials={testimonialsForPage} />
     <Footer/>
     </section>
   );

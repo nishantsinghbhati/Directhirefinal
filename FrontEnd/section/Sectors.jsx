@@ -4,42 +4,62 @@ import { motion } from 'framer-motion';
 // Industry data
 const industryData = [
   {
-    label: "Automobile & Auto Components",
+    label: "Sales & Business Development ",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/06/sp-icon-02.svg",
   },
   {
-    label: "Financial Services",
+    label: "Banking & Insurance ",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Finance.svg",
   },
   {
-    label: "Industrial",
+    label: "Information Technology (IT) ",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/06/sp-icon-04.svg",
   },
   {
-    label: "Technology",
+    label: "Customer Support & BPO ",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/06/sp-icon-05.svg",
   },
   {
-    label: "Consumer",
+    label: "Education & EdTech",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Consumer.svg",
   },
   {
-    label: "Media & Entertainment",
+    label: "Real Estate",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Media.svg",
   },
   {
-    label: "Pharma & Healthcare",
+    label: "Media, Marketing & Communications ",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Healthcare.svg",
   },
   {
-    label: "Retail",
+    label: "E-commerce & Retail ",
+    link: "",
+    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+  },
+   {
+    label: "Logistics & Supply Chain  ",
+    link: "",
+    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+  },
+   {
+    label: "Travel, Tourism & Hospitality ",
+    link: "",
+    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+  },
+   {
+    label: "Startups & Entrepreneurship ",
+    link: "",
+    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+  },
+   {
+    label: "Design & Creative Arts ",
     link: "",
     icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
   },

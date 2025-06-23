@@ -1,16 +1,12 @@
-// models/Blog.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const companyLogoSchema = new mongoose.Schema({
- name:{
-    type: String
- },
- img: {
-    data: Buffer,
-    contentType: String,
-  },
+  filename: String,
+  contentType: String,
+  imageBuffer: Buffer,
  
   // Add other fields as needed (e.g., category, tags, imageURL)
 });
 
-module.exports = mongoose.model('CompanyLogo', companyLogoSchema);
+const Companylogos = mongoose.model('Companylogos', companyLogoSchema);
+export default Companylogos;

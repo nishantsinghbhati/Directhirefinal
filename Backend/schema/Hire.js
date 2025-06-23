@@ -1,27 +1,53 @@
 import mongoose from 'mongoose';
 
 const hireSchema = new mongoose.Schema({
-  name: {
+  company: {
     type: String,
-    required: true
+    required: true,
+  },
+  contact: {
+    type: String,
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
-  company: {
+  phone: {
     type: String,
-    required: true
+    required: true,
   },
-  message: {
+  title: {
     type: String,
-    required: true
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  mode: {
+    type: String,
+    enum: ['remote', 'onsite', 'hybrid'],
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  salary: {
+    type: String,
+    required: true,
+  },
+  experience: {
+    type: String,
+    required: true,
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 const Hire = mongoose.model('Hire', hireSchema);
-export default Hire; 
+
+export default Hire;

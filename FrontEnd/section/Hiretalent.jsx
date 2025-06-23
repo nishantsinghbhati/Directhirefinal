@@ -29,15 +29,15 @@ const Hiretalent = () => {
         sections: [
             {
                 subheading: "Pre-Screened Candidates",
-                body: "Access a curated pool of job-ready professionals with polished, consultancy-reviewed resumes. Save time on sourcing — we handle the groundwork.",
+                body: "We have a pool of data sourced from various platforms and references over the past few years, which helps us fill the positions quickly. ",
             },
             {
-                subheading: "Targeted Role Matching",
-                body: "Share your hiring needs, and we’ll connect you with candidates whose skills align perfectly. From entry-level to experienced professionals, we’ve got your back.",
+                subheading: "What makes us different? ",
+                body: "We use AI filters and CRMs to filter out candidates on the basis of skills. Our experienced recruiters then rescreen these filtered-out candidates, giving them extra attention. This AI-plus-human effort helps us save time, get more relevant profiles required for a job, and fill a position faster. ",
             },
             {
-                subheading: "Fast & Direct Hiring",
-                body: "Skip the delays. Reach qualified candidates directly and fill your open roles faster — no middle layers, just transparent and efficient hiring.",
+                subheading: "The Talent network",
+                body: "We’ve built a thriving community of top candidates from diverse fields and cities across India, bringing together talent from both tech and non-tech domains. Our mission is to empower them by facilitating upskilling in industry-relevant skills that drive meaningful career growth. We hire from the community itself to make sure you get the best talent.",
             },
         ],
         buttonPrimary: "Hire Now",
@@ -141,8 +141,8 @@ const Hiretalent = () => {
       initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.6 }}>    {/* Left Section: Image/Illustration Placeholder */}
-                <div ref={imageBoxRef} className="w-full h-80 sm:h-96 rounded-lg shadow-lg flex re items-center justify-center overflow-hidden">
-                    <img src='../src/assets/recruiting-skills-cover.png' alt="Recruiting skills illustration" className="object-cover  w-full h-full" />
+                <div ref={imageBoxRef} className="w-full  rounded-lg shadow-lg overflow-hidden">
+                    <img src='/hire top talent.png' alt="Recruiting skills illustration" className="object-contain  w-full h-full" />
                 </div>
 </motion.div>
                 {/* Right Section: Text Content and Buttons */}

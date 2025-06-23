@@ -77,7 +77,7 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
                     <div
                       className="relative w-full h-full overflow-hidden rounded-[10px] bg-blue-100 flex items-center justify-center text-BLACK font-extrabold text-[1.5rem]"
                     >
-                      {typeof content === 'string' && content.startsWith('..') ? (
+                      {typeof content === 'string' && content.startsWith('/') ? (
                         <div
                           className="w-full h-full bg-cover bg-center absolute top-0 left-0"
                           style={{ backgroundImage: `url(${content})` }}

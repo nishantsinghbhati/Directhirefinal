@@ -7,6 +7,7 @@ import ProfileCard from "../section/OurTeam.jsx";
 import Footer from "../section/footer.jsx";
 import IndustrySpecializations from "../section/Sectors.jsx";
 import TestimonialSection from "../section/Testimonials.jsx";
+import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
 
 const sections = [
   {
@@ -142,10 +143,13 @@ const AboutUs = () => {
   iconUrl = "../src/assets/logo.png"
 />
         </section>
-
-        <section>
-          <TestimonialSection />
+ <section>
+         <CompanyLogosCarousel/>
         </section>
+        <section>
+           <TestimonialSection testimonials={testimonialsForPage} />
+        </section>
+
       </main>
 
       <footer>

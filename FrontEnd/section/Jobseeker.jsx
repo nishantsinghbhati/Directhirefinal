@@ -28,17 +28,14 @@ const JobSeekerSection = () => {
         title: "Job Seeker",
         sections: [
             {
-                subheading: "Professional Resume Builder",
-                body: "Create a polished, industry-ready resume in minutes. Our easy-to-use builder ensures your resume stands out and highlights your strengths effectively.",
+                subheading: "Direct Hiring Support ",
+                body: "Whether you're a fresher in marketing or a 3-year experienced developer, we have opportunities for you. We are hiring for 20+ companies in various domains in both IT and non-IT sectors. We help you find your next job effortlessly and connect you with the top companies. We streamline the process and help you throughout the process from interview to joining.",
             },
             {
-                subheading: "Verified Job Listings",
-                body: "Access a curated list of job openings from trusted employers. We connect you with real opportunities that match your experience and interests.",
+                subheading: "Professional Resume Builder ",
+                body: "We have built a resume builder, which you can use to make a professional resume that helps you stand out in a job application and improves your chances of being a top applicant.",
             },
-            {
-                subheading: "Direct Hiring Support",
-                body: "Apply directly to companies with confidence. We streamline the process to help you land jobs faster — no middle layers, just real results.",
-            },
+          
         ],
         buttonPrimary: "Find Job",
         buttonSecondary: "Build Resume",
@@ -136,8 +133,8 @@ const JobSeekerSection = () => {
     return (
         <section ref={sectionRef} className="min-h-screen relative z-20 flex items-center justify-center mt-4 sm:mt-0 sm:p-8 overflow-hidden">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 bg-blue-700  hover:bg-gradient-to-br from-blue-700 to-blue-900  sm:rounded-2xl gap-8 lg:gap-16 p-9 items-center w-full">
-                <div ref={imageBoxRef} className="w-full sm:hidden h-80 sm:h-96 rounded-lg shadow-lg flex items-center justify-center overflow-hidden">
-                    <img src='/jobseeker.png' alt="Job seeker illustration" className="object-cover w-full h-full" />
+                <div ref={imageBoxRef} className="w-full sm:hidden  rounded-lg shadow-lg overflow-hidden">
+                    <img src='/job seeker.png' alt="Recruiting skills illustration" className="object-contain  w-full h-full" />
                 </div>{/* Left Section: Text Content and Buttons */}
                 <motion.div
                     className="flex flex-col space-y-6"
@@ -207,8 +204,8 @@ const JobSeekerSection = () => {
               <motion.div
       initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
-         transition={{ duration: 0.6 }}>    <div ref={imageBoxRef} className="w-full h-80 hidden sm:h-96 rounded-lg shadow-lg sm:flex items-center justify-center overflow-hidden">
-                    <img src='/jobseeker.png' alt="Job seeker illustration" className="object-cover w-full h-full" />
+         transition={{ duration: 0.6 }}>   <div ref={imageBoxRef} className="w-full  rounded-lg shadow-lg overflow-hidden">
+                    <img src='/job seeker.png' alt="Recruiting skills illustration" className="object-contain hidden sm:flex w-full h-full" />
                 </div></motion.div>
             </div>
         </section>

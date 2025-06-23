@@ -7,53 +7,7 @@ import SpotlightCard from '../components/Hovercoloreffect';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Testimonials data
-const testimonialsData = [
-    {
-        name: 'Sarah Johnson',
-        position: 'Senior Developer',
-        image: 'https://source.unsplash.com/random/100x100/?person,face&1',
-        review: 'This platform is a game-changer!...',
-        stars: 5,
-    },
-    {
-        name: 'Michael Chen',
-        position: 'Marketing Specialist',
-        image: 'https://source.unsplash.com/random/100x100/?person,face&2',
-        review: 'I was struggling to find relevant job listings...',
-        stars: 4,
-    },
-    {
-        name: 'Emily Rodriguez',
-        position: 'Product Manager',
-        image: 'https://source.unsplash.com/random/100x100/?person,face&3',
-        review: 'The personalized guidance helped me...',
-        stars: 5,
-    },
-    {
-        name: 'David Lee',
-        position: 'Data Analyst',
-        image: 'https://source.unsplash.com/random/100x100/?person,face&4',
-        review: 'Efficient, user-friendly, and effective!...',
-        stars: 5,
-    },
-    {
-        name: 'Jessica White',
-        position: 'UX Designer',
-        image: 'https://source.unsplash.com/random/100x100/?person,face&5',
-        review: 'Finding a job can be daunting...',
-        stars: 4,
-    },
-    {
-        name: 'Chris Green',
-        position: 'Financial Advisor',
-        image: 'https://source.unsplash.com/random/100x100/?person,face&6',
-        review: 'I appreciate the focus on direct hiring...',
-        stars: 5,
-    },
-];
-
-// Testimonial Card component
+// === Card Animation Variants ===
 const cardVariants = {
     hidden: { opacity: 0, scale: 0 },
     visible: {
@@ -63,6 +17,7 @@ const cardVariants = {
     },
 };
 
+// === Testimonial Card ===
 const TestimonialCard = ({ testimonial }) => {
     const cardRef = useRef(null);
 
@@ -135,7 +90,7 @@ const TestimonialCard = ({ testimonial }) => {
     );
 };
 
-// LazySwiper inside same file for simplicity
+// === Lazy Load Swiper ===
 const LazySwiper = ({ testimonials }) => {
     const [SwiperModules, setSwiperModules] = useState(null);
 
@@ -184,8 +139,8 @@ const LazySwiper = ({ testimonials }) => {
     );
 };
 
-// Final section component
-const TestimonialSection = () => {
+// === Main Testimonial Section ===
+const TestimonialSection = ({ testimonials = [] }) => {
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
@@ -209,6 +164,8 @@ const TestimonialSection = () => {
         );
     }, []);
 
+    if (testimonials.length === 0) return null;
+
     return (
         <section ref={sectionRef} className="py-16 relative z-30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +184,7 @@ const TestimonialSection = () => {
                     </p>
                 </div>
 
-                <LazySwiper testimonials={testimonialsData} />
+                <LazySwiper testimonials={testimonials} />
             </div>
         </section>
     );

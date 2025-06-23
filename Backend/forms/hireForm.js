@@ -4,39 +4,53 @@ import { sendWhatsApp } from "../whatsapp.js";
 
 const router = express.Router();
 
-
-
 // 🟢 Hire Talent
 router.post("/hire", async (req, res) => {
-  const { name, email, company, message } = req.body;
+  const {
+    company,
+    contact,
+    email,
+    phone,
+    title,
+    description,
+    mode,
+    location,
+    salary,
+    experience,
+  } = req.body;
 
   try {
     // Save to MongoDB
     const hire = new Hire({
-      name,
-      email,
       company,
-      message
+      contact,
+      email,
+      phone,
+      title,
+      description,
+      mode,
+      location,
+      salary,
+      experience,
     });
+
     await hire.save();
 
-    // Send WhatsApp notification
+    // Send WhatsApp notification (you can customize message formatting inside sendWhatsApp)
     await sendWhatsApp({
-      name,
-      email,
       type: "hire",
+      contact,
+      email,
+      phone,
+      title,
       company,
-      message
     });
 
     res.status(200).json({ message: "Hire form submitted successfully" });
   } catch (err) {
-    console.error(err);
+    console.error("Hire form error:", err);
     res.status(500).json({ error: "Failed to submit hire form" });
   }
 });
-
-
-
 
 export default router;

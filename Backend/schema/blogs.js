@@ -1,5 +1,5 @@
 // models/Blog.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const blogSchema = new mongoose.Schema({
  title:{
@@ -18,4 +18,5 @@ const blogSchema = new mongoose.Schema({
   // Add other fields as needed (e.g., category, tags, imageURL)
 });
 
-module.exports = mongoose.model('Blog', blogSchema);
+const Blogs = mongoose.model('Blogs', blogSchema);
+export default Blogs;

@@ -112,7 +112,7 @@ const Navbar = () => {
         <div className="flex-shrink-0 text-xl font-bold text-gray-900">
           <a href="/">
             <motion.img
-              src="/src/assets/NavLogo.png" // Ensure path is correct
+              src="/NavLogo.png" // Ensure path is correct
               alt="directhirelogo"
               className="h-10 w-auto cursor-pointer"
               whileHover={{ scale: 1.1, rotate: 5 }}

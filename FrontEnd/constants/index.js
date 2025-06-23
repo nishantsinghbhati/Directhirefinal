@@ -23,7 +23,22 @@ const links = [
   { name: "Contact Us", href: "/contact" },
 ];
 
-
+const testimonialsForhire = [
+    {
+        name: 'Anjali Mehta',
+        position: 'Frontend Developer',
+        image: 'https://source.unsplash.com/random/100x100/?girl',
+        review: 'The experts provided excellent consultation, which in turn helped me secure a position in a top organization.',
+        stars: 5,
+    },
+    {
+        name: 'Ravi Kumar',
+        position: 'Backend Engineer',
+        image: 'https://source.unsplash.com/random/100x100/?man',
+        review: ' What one individual fresher or job seeker can expect from the hiring team is that they have everything to provide you.',
+        stars: 4,
+    },
+];
 
 export{
     navLinks1,

@@ -12,6 +12,7 @@ import TestimonialSection from '../section/Testimonials';
 import HeroCTA from '../section/Callaction';
 import Footer from '../section/footer';
 import { TextParallaxContentExample } from '../components/scrole';
+import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
 
 const Home = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -44,6 +45,9 @@ const Home = () => {
               transition={{ delay: 0, duration: 0.6 }}
             >
               <IndustrySpecializations />
+              <section>
+         <CompanyLogosCarousel/>
+        </section>
               <Experience />
             </motion.section>
 
@@ -58,7 +62,7 @@ const Home = () => {
             </section>
 
             <section aria-label="Testimonials">
-              <TestimonialSection />
+              <TestimonialSection testimonials={testimonialsForPage} />
             </section>
 
             <section aria-label="Call to Action">

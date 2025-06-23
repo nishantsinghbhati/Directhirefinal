@@ -182,10 +182,10 @@ export default function HireTalentPage() {
           </div>
     </form>
       </motion.div><div className="lg:w-1/2 hidden lg:flex items-center justify-center">
-        <img src="../src/assets/recruiting-skills-cover.png" alt="Contact Us" className="contact-image max-w-[600px] max-h-[600px] w-fit h-fit object-cover rounded-lg shadow-lg" />
+        <img src="/hire top talent.png" alt="Contact Us" className="contact-image max-w-[600px] max-h-[600px] w-fit h-fit object-cover rounded-lg shadow-lg" />
       </div>
     </div>
-    <TestimonialSection/>
+     <TestimonialSection testimonials={testimonialsForPage} />
     <Footer/></div>
   );
 }

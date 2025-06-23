@@ -1,5 +1,5 @@
 import React from "react";
-import loadingGif from "../src/assets/loading.gif";  // adjust path accordingly
+import loadingGif from "/loading.gif";  // adjust path accordingly
 
 const Loading = () => {
   return (
