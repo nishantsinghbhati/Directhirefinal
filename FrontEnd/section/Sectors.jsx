@@ -6,62 +6,62 @@ const industryData = [
   {
     label: "Sales & Business Development ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/06/sp-icon-02.svg",
+    icon: "/sales.png",
   },
   {
     label: "Banking & Insurance ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Finance.svg",
+    icon: "/savings.png",
   },
   {
     label: "Information Technology (IT) ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/06/sp-icon-04.svg",
+    icon: "/information-technology_17735653.png",
   },
   {
     label: "Customer Support & BPO ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/06/sp-icon-05.svg",
+    icon: "/customer-service.png",
   },
   {
     label: "Education & EdTech",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Consumer.svg",
+    icon: "/school.png",
   },
   {
     label: "Real Estate",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Media.svg",
+    icon: "/agreement.png",
   },
   {
     label: "Media, Marketing & Communications ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Healthcare.svg",
+    icon: "/bullhorn.png",
   },
   {
     label: "E-commerce & Retail ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+    icon: "/ecommerce.png",
   },
    {
     label: "Logistics & Supply Chain  ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+    icon: "/logistics.png",
   },
    {
     label: "Travel, Tourism & Hospitality ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+    icon: "/travel-and-tourism.png",
   },
    {
     label: "Startups & Entrepreneurship ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+    icon: "/start-up.png",
   },
    {
     label: "Design & Creative Arts ",
     link: "",
-    icon: "https://www.abcconsultants.in/wp-content/uploads/2023/10/Retail.svg",
+    icon: "/web-design.png",
   },
 ];
 

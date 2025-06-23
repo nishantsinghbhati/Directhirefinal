@@ -9,6 +9,8 @@ import gsap from "gsap";
 import TextPressure from "../components/AboutusText";
 import TestimonialSection from "../section/Testimonials";
 import Footer from "../section/footer";
+  import {candidatereviews} from "../constants/index.js"
+
 export default function HireTalentPage() {
   const containerRef = useRef(null);
 
@@ -185,7 +187,7 @@ export default function HireTalentPage() {
         <img src="/hire top talent.png" alt="Contact Us" className="contact-image max-w-[600px] max-h-[600px] w-fit h-fit object-cover rounded-lg shadow-lg" />
       </div>
     </div>
-     <TestimonialSection testimonials={testimonialsForPage} />
+     <TestimonialSection testimonials={candidatereviews} />
     <Footer/></div>
   );
 }

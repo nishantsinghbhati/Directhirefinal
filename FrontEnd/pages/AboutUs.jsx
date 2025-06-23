@@ -8,29 +8,9 @@ import Footer from "../section/footer.jsx";
 import IndustrySpecializations from "../section/Sectors.jsx";
 import TestimonialSection from "../section/Testimonials.jsx";
 import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
-
-const sections = [
-  {
-    title: "More Than Recruitment — A Mission-Driven Talent Platform",
-    text: "Direct Hire is more than just a recruitment agency. It’s a platform built on the belief that quality hiring shouldn't be slow, impersonal, or based on outdated methods. Today, we work with a wide range of clients across IT and Non-IT sectors — from agile startups to growing corporates — helping them close positions quickly without compromising on quality. Behind every successful placement is our ever-evolving talent community: skilled professionals from diverse backgrounds who we actively support, nurture, and help grow through upskilling and career development initiatives.",
-    image: "/Gemini_Generated_Image_2wyum52wyum52wyu.png",
-    style: "rounded-r-full"
-  },
-  {
-    title: "Precision Over Volume — Our Unique Hiring Philosophy",
-    text: "What truly sets us apart is our approach. Where most agencies focus on volume, we’re obsessed with fit. We take the time to understand the needs behind every role and go beyond resumes to find candidates who align in skills, mindset, and potential. Our turnaround times are fast, but never rushed — because we believe quality hiring is about precision, not pressure.",
-    image: "/Gemini_Generated_Image_cm9dwicm9dwicm9d.png",
-    reverse: true,
-    style: "rounded-l-full"
-  },
-  {
-    title: "From One to Many — The Team Powering the Vision",
-    text: "What started as a solo mission has now grown into a team of 15+ passionate individuals, all driven by the same mission: to close the hiring gap with speed, care, and clarity. We’re building a future where hiring isn’t just a transaction — it’s a meaningful match between talent and opportunity. And we're just getting started.",
-    image: "/team.png",
-    style: "rounded-r-full"
-  }
-];
-
+import {candidatereviews} from "../constants/index.js"
+import {sections} from "../constants/index.js"
+import React, { useState } from "react";
 const StorySection = ({ title, text, image, reverse, style }) => (
   <section className={`py-16 px-6 md:flex ${reverse ? "flex-row-reverse" : ""} items-center max-w-7xl mx-auto`}>
     <article className="md:w-1/2 p-4">
@@ -80,6 +60,10 @@ const HeroSection = () => (
   </header>
 );
 
+
+ 
+   
+
 const AboutUs = () => {
     console.log("Helmet rendering");
 
@@ -126,28 +110,56 @@ const AboutUs = () => {
           <Experience />
         </motion.section>
 
-        <section className="relative sm:min-h-[700px] overflow-hidden flex-col gap-6 justify-center items-center flex ">
-  
-  <h2 className="sm:text-8xl text-6xl font-[ClashDisplay-Semibold]">Fou <span className="text-blue-700">nder</span></h2>
-<ProfileCard
-  name="Ayushi Agarwal"
-  title="Founder"
-  handle="AyushiAgarwal"
-  status="Online"
-  contactText="Contact Me"
-  avatarUrl="./pf.png"
-  showUserInfo={true}
-  enableTilt={true}
-  onContactClick={() => console.log('Contact clicked')}
-  grainUrl = "./grain.webp"
-  iconUrl = "../src/assets/logo.png"
-/>
-        </section>
+        <section className="relative sm:min-h-[700px] min-h-screen overflow-hidden flex flex-col items-center px-4 py-10">
+  <h2 className="sm:text-8xl text-6xl font-[ClashDisplay-Semibold] text-center mb-12">
+    Fou <span className="text-blue-700">nder</span>
+  </h2>
+
+  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-10 w-full max-w-7xl">
+    {/* Profile Card Left */}
+    <div className="flex-1 flex justify-center sm:justify-end">
+      <ProfileCard
+        name="Ayushi Agarwal"
+        title="Founder"
+        handle="AyushiAgarwal"
+        status="Online"
+        contactText="Contact Me"
+        avatarUrl="./pf.png"
+        showUserInfo={true}
+        enableTilt={true}
+        onContactClick={() => console.log('Contact clicked')}
+        grainUrl="./grain.webp"
+        iconUrl="/logo.png"
+      />
+    </div>
+
+    {/* Message Right */}
+    <div className="flex-1 text-left sm:pl-6">
+   
+      <p className="text-center sm:text-lg leading-7 sm:leading-8 font-[ClashDisplay-Reguler] text-gray-700">
+        Hi, my name is <span className="text-blue-700 font-[ClashDisplay-Medium] ">Ayushi</span>, and I started my career as a customer support executive, then 
+        switched to the operations domain and found it wasn't for me, then switched to SEO but 
+        didn't find it exciting either, and finally, I started in the HR domain and liked it so much 
+        that a job change that started as a curiosity turned into passion, and that passion led to 
+        the creation of Direct Hire.
+        <br /><br />
+        I founded this recruitment consultancy with a clear vision: to connect the right talent with 
+        the right opportunity.
+        <br /><br />
+        I understood the problems of both companies and candidates, whether it was 
+        candidates not finding the right jobs or companies not being able to find the right talent 
+        with the skills required for the jobs. In both scenarios, it would often lead to either the 
+        candidate leaving the job or vice versa.
+      </p>
+    </div>
+  </div>
+</section>
+
  <section>
          <CompanyLogosCarousel/>
         </section>
         <section>
-           <TestimonialSection testimonials={testimonialsForPage} />
+           <TestimonialSection testimonials={candidatereviews} />
         </section>
 
       </main>

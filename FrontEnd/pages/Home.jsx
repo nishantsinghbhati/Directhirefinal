@@ -13,6 +13,7 @@ import HeroCTA from '../section/Callaction';
 import Footer from '../section/footer';
 import { TextParallaxContentExample } from '../components/scrole';
 import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
+import {candidatereviews} from "../constants/index.js"
 
 const Home = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -62,7 +63,7 @@ const Home = () => {
             </section>
 
             <section aria-label="Testimonials">
-              <TestimonialSection testimonials={testimonialsForPage} />
+              <TestimonialSection testimonials={candidatereviews} />
             </section>
 
             <section aria-label="Call to Action">

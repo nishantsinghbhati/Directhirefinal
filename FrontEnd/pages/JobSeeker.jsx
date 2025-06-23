@@ -9,6 +9,8 @@ import { useFormSubmit } from "../hooks/useFormSubmit.js";
 import { useForm } from "react-hook-form";
 import { jobSeekerSchema } from "../src/schema/jobSeekerSchema.js";
   import { useNavigate } from 'react-router-dom';
+  import {candidatereviews} from "../constants/index.js"
+
 export default function JobSeekerForm() {
    const navigate = useNavigate();
  const {
@@ -228,7 +230,7 @@ gsap.fromTo(".form-field",
         </motion.button></div>
       </form>
     </motion.div> </div>
-    <TestimonialSection testimonials={testimonialsForPage} />
+    <TestimonialSection testimonials={candidatereviews} />
     <Footer/>
     </section>
   );
