@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger for advanced scroll animations
 import { useNavigate } from 'react-router-dom';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
-
+import {jobcontent} from "../constants/index"
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,30 +18,15 @@ const JobSeekerSection = () => {
     // Refs for scroll fade-in (applied to the main container and title)
     const sectionRef = useRef(null); // Ref for the entire section for overall scroll animation
     const titleRef = useRef(null); // Ref for the main title
-    const sectionsRefs = useRef([]); // Array to hold refs for each content section
+    const sectionsRefs = useRef([]); // Array to hold refs for each jobcontent section
 
     // Use the custom scroll fade-in hook for the main section and title
     useScrollFadeIn(sectionRef, { threshold: 0.1 }); // Apply to the whole section
     useScrollFadeIn(titleRef, { duration: 1, delay: 0.2, start: "top 70%" }); // Apply to the main title
 
-    const content = {
-        title: "Job Seeker",
-        sections: [
-            {
-                subheading: "Direct Hiring Support ",
-                body: "Whether you're a fresher in marketing or a 3-year experienced developer, we have opportunities for you. We are hiring for 20+ companies in various domains in both IT and non-IT sectors. We help you find your next job effortlessly and connect you with the top companies. We streamline the process and help you throughout the process from interview to joining.",
-            },
-            {
-                subheading: "Professional Resume Builder ",
-                body: "We have built a resume builder, which you can use to make a professional resume that helps you stand out in a job application and improves your chances of being a top applicant.",
-            },
-          
-        ],
-        buttonPrimary: "Find Job",
-        buttonSecondary: "Build Resume",
-    };
+   
 
-    // Framer Motion variants for staggered text animation (used on the text content wrapper)
+    // Framer Motion variants for staggered text animation (used on the text jobcontent wrapper)
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -106,7 +91,7 @@ const JobSeekerSection = () => {
             }
         );
 
-        // GSAP ScrollTrigger for each content section (subheading and body)
+        // GSAP ScrollTrigger for each jobcontent section (subheading and body)
         sectionsRefs.current.forEach((el, index) => {
             if (el) {
                 gsap.fromTo(
@@ -134,8 +119,8 @@ const JobSeekerSection = () => {
         <section ref={sectionRef} className="min-h-screen relative z-20 flex items-center justify-center mt-4 sm:mt-0 sm:p-8 overflow-hidden">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 bg-blue-700  hover:bg-gradient-to-br from-blue-700 to-blue-900  sm:rounded-2xl gap-8 lg:gap-16 p-9 items-center w-full">
                 <div ref={imageBoxRef} className="w-full sm:hidden  rounded-lg shadow-lg overflow-hidden">
-                    <img src='/job seeker.png' alt="Recruiting skills illustration" className="object-contain  w-full h-full" />
-                </div>{/* Left Section: Text Content and Buttons */}
+                    <img src='/job seeker.webp' alt="Recruiting skills illustration" className="object-contain  w-full h-full" />
+                </div>{/* Left Section: Text jobcontent and Buttons */}
                 <motion.div
                     className="flex flex-col space-y-6"
                     variants={containerVariants}
@@ -146,10 +131,10 @@ const JobSeekerSection = () => {
          transition={{ duration: 0.9 }}>  
                 
                     <h1 ref={titleRef} className="text-4xl sm:text-5xl sm:text-start text-center font-extrabold text-gray-100 mb-4">
-                        {content.title}
+                        {jobcontent.title}
                     </h1>
 
-                    {content.sections.map((section, index) => (
+                    {jobcontent.sections.map((section, index) => (
                         <div key={index} ref={el => sectionsRefs.current[index] = el}>
                             <motion.h3
                                 className="text-xl font-semibold text-gray-100 mb-1 inline-block" // inline-block to allow individual word hover
@@ -184,7 +169,7 @@ const JobSeekerSection = () => {
                             whileTap={{ scale: 0.95 }} // Framer Motion tap
                             onClick={() => navigate("/job-seeker")}
                         >
-                            {content.buttonPrimary}
+                            {jobcontent.buttonPrimary}
                         </motion.button>
                         <motion.button
                             ref={buttonSecondaryRef}
@@ -194,18 +179,18 @@ const JobSeekerSection = () => {
                             whileTap={{ scale: 0.95 }} // Framer Motion tap
                             onClick={() => navigate("/resume-maker")}
                         >
-                            {content.buttonSecondary}
+                            {jobcontent.buttonSecondary}
                         </motion.button>
                     </div>
                 </motion.div>
 
                 {/* Right Section: Image/Illustration Placeholder */}
-                {/* The image is on the right because the text content div is first in the grid */}
+                {/* The image is on the right because the text jobcontent div is first in the grid */}
               <motion.div
       initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.6 }}>   <div ref={imageBoxRef} className="w-full  rounded-lg shadow-lg overflow-hidden">
-                    <img src='/job seeker.png' alt="Recruiting skills illustration" className="object-contain hidden sm:flex w-full h-full" />
+                    <img src='/job seeker.webp' alt="Recruiting skills illustration" className="object-contain hidden sm:flex w-full h-full" />
                 </div></motion.div>
             </div>
         </section>

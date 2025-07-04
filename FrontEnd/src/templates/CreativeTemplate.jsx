@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Typography, Paper, Divider } from '@mui/material';
+
+import { Box, Typography, Paper} from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const ResumeContainer = styled(Paper)`

@@ -100,10 +100,10 @@ function CountUp({
 }
 
 const stats = [
-  { value: 7, suffix: "+", label: "Serving Sectors" ,icon:"/bag.png" },
-  { value: 20, suffix: "+", label: "Trusted by Employers",icon: "/profile.png"},
-  { value: 10, suffix: "+", label: "Recruiters Team",icon:"/check.png" },
-  { value: 1500, suffix: "+", label: "Successful Placements", separator: ",",icon:"/stats.png" },
+  { value: 7, suffix: "+", label: "Serving Sectors" ,icon:"/bag.webp" },
+  { value: 20, suffix: "+", label: "Trusted by Employers",icon: "/profile.webp"},
+  { value: 10, suffix: "+", label: "Recruiters Team",icon:"/check.webp" },
+  { value: 1500, suffix: "+", label: "Successful Placements", separator: ",",icon:"/stats.webp" },
 ];
 
 export default function StatsSection() {

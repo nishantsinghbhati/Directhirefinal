@@ -122,7 +122,7 @@ export default function Footer() {
         {/* Bottom Line */}
         <div className="border-t border-blue-600 mt-16 pt-8 text-center text-sm text-blue-200">
           © {new Date().getFullYear()} Direct Hire. All rights reserved. 
-          <a href="https://nishant-singh-bhati-portfolio.onrender.com/" target="_blank"> (Managed by vision)</a>
+          <a href="https://nishant-singh-bhati-portfolio.onrender.com/" target="_blank"> (Managed by Techi Dots)</a>
         </div>
       </div>
     </footer>

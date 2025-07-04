@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger for advanced scroll animations
 import { useNavigate } from 'react-router-dom';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
-
+import {hirecontent} from "../constants/index"
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,33 +18,15 @@ const Hiretalent = () => {
     // Refs for scroll fade-in (applied to the main container and title)
     const sectionRef = useRef(null); // Ref for the entire section for overall scroll animation
     const titleRef = useRef(null); // Ref for the main title
-    const sectionsRefs = useRef([]); // Array to hold refs for each content section
+    const sectionsRefs = useRef([]); // Array to hold refs for each hirecontent section
 
     // Use the custom scroll fade-in hook for the main section and title
     useScrollFadeIn(sectionRef, { threshold: 0.1 }); // Apply to the whole section
     useScrollFadeIn(titleRef, { duration: 1, delay: 0.2, start: "top 70%" }); // Apply to the main title
 
-    const content = {
-        title: "Hire Talent",
-        sections: [
-            {
-                subheading: "Pre-Screened Candidates",
-                body: "We have a pool of data sourced from various platforms and references over the past few years, which helps us fill the positions quickly. ",
-            },
-            {
-                subheading: "What makes us different? ",
-                body: "We use AI filters and CRMs to filter out candidates on the basis of skills. Our experienced recruiters then rescreen these filtered-out candidates, giving them extra attention. This AI-plus-human effort helps us save time, get more relevant profiles required for a job, and fill a position faster. ",
-            },
-            {
-                subheading: "The Talent network",
-                body: "We’ve built a thriving community of top candidates from diverse fields and cities across India, bringing together talent from both tech and non-tech domains. Our mission is to empower them by facilitating upskilling in industry-relevant skills that drive meaningful career growth. We hire from the community itself to make sure you get the best talent.",
-            },
-        ],
-        buttonPrimary: "Hire Now",
-        buttonSecondary: "Talk to Consultant",
-    };
 
-    // Framer Motion variants for staggered text animation (used on the text content wrapper)
+
+    // Framer Motion variants for staggered text animation (used on the text hirecontent wrapper)
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -109,7 +91,7 @@ const Hiretalent = () => {
             }
         );
 
-        // GSAP ScrollTrigger for each content section (subheading and body)
+        // GSAP ScrollTrigger for each hirecontent section (subheading and body)
         sectionsRefs.current.forEach((el, index) => {
             if (el) {
                 gsap.fromTo(
@@ -142,10 +124,10 @@ const Hiretalent = () => {
         whileInView={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.6 }}>    {/* Left Section: Image/Illustration Placeholder */}
                 <div ref={imageBoxRef} className="w-full  rounded-lg shadow-lg overflow-hidden">
-                    <img src='/hire top talent.png' alt="Recruiting skills illustration" className="object-contain  w-full h-full" />
+                    <img src='/hire top talent.webp' alt="Recruiting skills illustration" className="object-contain  w-full h-full" />
                 </div>
 </motion.div>
-                {/* Right Section: Text Content and Buttons */}
+                {/* Right Section: Text hirecontent and Buttons */}
                 <motion.div
                     className="flex flex-col space-y-6"
                     variants={containerVariants}
@@ -157,10 +139,10 @@ const Hiretalent = () => {
          transition={{ duration: 0.9 }}>
               
                     <h1 ref={titleRef} className="text-4xl sm:text-5xl sm:text-start text-center font-extrabold text-gray-100 mb-4">
-                        {content.title}
+                        {hirecontent.title}
                     </h1>
 
-                    {content.sections.map((section, index) => (
+                    {hirecontent.sections.map((section, index) => (
                         <div key={index} ref={el => sectionsRefs.current[index] = el}>
                             <motion.h3
                                 className="text-xl font-semibold text-gray-100 mb-1 inline-block" // inline-block to allow individual word hover
@@ -195,7 +177,7 @@ const Hiretalent = () => {
                             whileTap={{ scale: 0.95 }} // Framer Motion tap
                             onClick={() => navigate("/hire-talent")}
                         >
-                            {content.buttonPrimary}
+                            {hirecontent.buttonPrimary}
                         </motion.button>
                         <motion.button
                             ref={buttonSecondaryRef}
@@ -205,7 +187,7 @@ const Hiretalent = () => {
                             whileTap={{ scale: 0.95 }} // Framer Motion tap
                             onClick={() => navigate("/contact")}
                         >
-                            {content.buttonSecondary}
+                            {hirecontent.buttonSecondary}
                         </motion.button>
                     </div>
                 </motion.div>

@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Hiretalent from "../section/Hiretalent";
 import JobSeekerSection from "../section/Jobseeker";
-import StatsSection from "../section/Experience";
 import GridMotion from "./Bggalary"; // Your animated background
 
 const IMG_PADDING = 12;

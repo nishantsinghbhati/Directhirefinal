@@ -1,4 +1,4 @@
-import React, { useCallback, memo, useEffect } from 'react';
+import { useCallback, memo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'react-toastify';

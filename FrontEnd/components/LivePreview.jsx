@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { Box, Typography, Avatar, Grid } from '@mui/material';
 
 function LivePreview({ formData }) {

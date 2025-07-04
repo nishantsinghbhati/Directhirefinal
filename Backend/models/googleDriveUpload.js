@@ -1,7 +1,10 @@
 import { google } from "googleapis";
 import stream from "stream";
 
+import express from "express";
+import dotenv from "dotenv";
 
+dotenv.config(); // ✅ Loads variables from .env
 
 
 

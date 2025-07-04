@@ -10,7 +10,7 @@ import JobSeekerSection from '../section/Jobseeker';
 import Hiretalent from '../section/Hiretalent';
 import TestimonialSection from '../section/Testimonials';
 import HeroCTA from '../section/Callaction';
-import Footer from '../section/footer';
+import Footer from '../section/Footer';
 import { TextParallaxContentExample } from '../components/scrole';
 import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
 import {candidatereviews} from "../constants/index.js"
@@ -21,12 +21,25 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Home | DirectHire</title>
-        <meta name="description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
-        <meta name="keywords" content="resume builder, job portal, hire talent, job seeker tools" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
+     <Helmet>
+  <title>Home | DirectHire</title>
+  <meta name="description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
+  <meta name="keywords" content="resume builder, job portal, hire talent, job seeker tools" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Meta Tags */}
+  <meta property="og:title" content="Home | DirectHire" />
+  <meta property="og:description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://yourdomain.com/images/og-home.jpg" />
+
+  {/* Twitter Card Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home | DirectHire" />
+  <meta name="twitter:description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
+  <meta name="twitter:image" content="https://yourdomain.com/images/og-home.jpg" />
+</Helmet>
 
       {!revealComplete && (
         <LoadingOverlay onComplete={() => setRevealComplete(true)} />

@@ -1,4 +1,3 @@
-import React from "react";
 import loadingGif from "/loading.gif";  // adjust path accordingly
 
 const Loading = () => {

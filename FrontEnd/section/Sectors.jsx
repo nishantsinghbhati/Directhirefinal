@@ -1,69 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-
+import {industryData} from "../constants/index" 
 // Industry data
-const industryData = [
-  {
-    label: "Sales & Business Development ",
-    link: "",
-    icon: "/sales.png",
-  },
-  {
-    label: "Banking & Insurance ",
-    link: "",
-    icon: "/savings.png",
-  },
-  {
-    label: "Information Technology (IT) ",
-    link: "",
-    icon: "/information-technology_17735653.png",
-  },
-  {
-    label: "Customer Support & BPO ",
-    link: "",
-    icon: "/customer-service.png",
-  },
-  {
-    label: "Education & EdTech",
-    link: "",
-    icon: "/school.png",
-  },
-  {
-    label: "Real Estate",
-    link: "",
-    icon: "/agreement.png",
-  },
-  {
-    label: "Media, Marketing & Communications ",
-    link: "",
-    icon: "/bullhorn.png",
-  },
-  {
-    label: "E-commerce & Retail ",
-    link: "",
-    icon: "/ecommerce.png",
-  },
-   {
-    label: "Logistics & Supply Chain  ",
-    link: "",
-    icon: "/logistics.png",
-  },
-   {
-    label: "Travel, Tourism & Hospitality ",
-    link: "",
-    icon: "/travel-and-tourism.png",
-  },
-   {
-    label: "Startups & Entrepreneurship ",
-    link: "",
-    icon: "/start-up.png",
-  },
-   {
-    label: "Design & Creative Arts ",
-    link: "",
-    icon: "/web-design.png",
-  },
-];
+
 
 export default function IndustrySpecializations() {
   const [activeIndex, setActiveIndex] = useState(0);

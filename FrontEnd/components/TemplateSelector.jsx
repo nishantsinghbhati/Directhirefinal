@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, Typography, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ModernTemplate from '../src/templates/ModernTemplate';

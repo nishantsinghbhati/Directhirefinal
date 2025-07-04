@@ -8,7 +8,7 @@ import theme from '../src/theme';
 import Home from './HomeResume';
 import ResumeBuilder from './ResumeBuilder';
 import Templates from './Templates';
-import Footer from "../section/footer";
+import Footer from "../section/Footer";
 
 const toastConfig = {
   position: "top-right",

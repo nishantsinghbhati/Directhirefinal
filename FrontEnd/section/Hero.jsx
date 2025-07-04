@@ -1,6 +1,6 @@
 import Iridescence from '../components/Button.jsx';
-import Logo from '../components/Logo.jsx';
-import { motion, AnimatePresence } from 'framer-motion';
+
+import { motion } from 'framer-motion';
 import "../src/assets/style.css"
 import useShowAnimation from '../hooks/useShowAnimation.js';
   import { useNavigate } from 'react-router-dom';
@@ -50,11 +50,7 @@ useEffect(() => {
     
  
   <div className="relative z-20 hero-layout">
-    {/* all your content inside */}
-  
 
-      
-    
           <header className="flex flex-col justify-center  md:w-screen w-screen md:px-20 px-5">
             <div className="relative w-full flex items-center justify-center lg:min-h-screen md:h-screen h-[600px]">
             {showContent && (
@@ -93,9 +89,6 @@ useEffect(() => {
                 </span>
     </motion.button>
   )}
-  
-             
-           
                   </div>
           
  

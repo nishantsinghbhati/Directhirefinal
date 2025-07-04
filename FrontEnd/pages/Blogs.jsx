@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet-async";
-import Footer from "../section/footer.jsx";
+import Footer from "../section/Footer.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const BlogCard = ({ title, preview, content, index }) => {
@@ -111,8 +111,25 @@ const BlogPage = () => {
   return (
     <>
       <Helmet>
-        <title>Blogs | DirectHire</title>
-      </Helmet>
+  <title>Blogs | DirectHire</title>
+  <meta name="description" content="Explore expert hiring insights, career tips, and industry updates on the DirectHire blog. Stay informed and empowered." />
+
+  {/* Open Graph / Facebook */}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blogs | DirectHire" />
+  <meta property="og:description" content="Explore expert hiring insights, career tips, and industry updates on the DirectHire blog." />
+  <meta property="og:url" content="https://yourdomain.com/blogs" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" /> {/* Replace with actual image URL */}
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blogs | DirectHire" />
+  <meta name="twitter:description" content="Explore expert hiring insights, career tips, and industry updates on the DirectHire blog." />
+  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+
+  {/* Canonical Link */}
+  <link rel="canonical" href="https://yourdomain.com/blogs" />
+</Helmet>
 
       <div className="relative min-h-screen bg-white text-black overflow-x-hidden">
         <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 via-white to-blue-100 opacity-30 animate-pulse z-0" />
