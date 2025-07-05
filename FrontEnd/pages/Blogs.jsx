@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet-async";
 import Footer from "../section/Footer.jsx";
+import parse from "html-react-parser";
 gsap.registerPlugin(ScrollTrigger);
 
 const BlogCard = ({ title, preview, content, index }) => {
@@ -68,13 +69,13 @@ const BlogCard = ({ title, preview, content, index }) => {
       >
         {contentLines.slice(0, revealedLines).map((line, idx) => (
           <motion.p
-            key={idx}
+            key={idx}x
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: idx * 0.1 }}
             className="mb-2"
           >
-            {line}.
+           {parse(content)}
           </motion.p>
         ))}
       </motion.div>
