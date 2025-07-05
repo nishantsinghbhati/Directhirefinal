@@ -108,7 +108,7 @@ const CompanyLogosCarousel = () => {
 
   return (
     <div className="w-full py-12 bg-gradient-to-r from-blue-50 to-blue-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-900 mb-4">Trusted by Industry Leaders</h2>
           <p className="text-lg text-blue-700">Companies I've had the privilege to work with</p>
@@ -118,7 +118,7 @@ const CompanyLogosCarousel = () => {
           <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-blue-50 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-blue-100 to-transparent z-10 pointer-events-none"></div>
 
-          <div className="overflow-hidden">
+          <div className="overflow-hidden z-40">
             <div
               ref={carouselRef}
               className="flex space-x-8 will-change-transform"
