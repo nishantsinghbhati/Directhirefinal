@@ -270,7 +270,7 @@ const hiringcompanysreviews = [
     {
     name: 'Talli Tales',
     position: ' Komal Agarwal, Co-Founder, Talli Tales',
-    image: '/Talli.PnG',
+    image: '/Talli.PNG',
     review: 'Hiring for the alcohol industry is a very niche task, especially in sales. Direct Hire helped us find the right candidate who understood both the industry and the nature of the product. Their approach was quick, focused, and efficient',
     stars: 5
   },
@@ -286,7 +286,7 @@ const hiringcompanysreviews = [
     {
     name: 'Reenaas Fashion',
     position: '',
-    image: '/reenas.JPG',
+    image: '/reenaas.JPG',
     review: 'We recently needed to hire a shipping manager for Reenaas Fashion and decided to go through DirectHire in Jaipur. I was pleasantly surprised by how easy they made the whole process. The team really took the time to understand exactly what we were looking for n came back with some excellent candidates. We ended up hiring a perfect fit for the role. It’s clear that DirectHire knows what they’re doing n they care about getting it right. I highly recommend them if ur looking for reliable n efficient staffing help!',
     stars: 5
   },

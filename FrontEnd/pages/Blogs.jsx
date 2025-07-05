@@ -12,7 +12,8 @@ const BlogCard = ({ title, preview, content, index }) => {
   const [revealedLines, setRevealedLines] = useState(0);
   const cardRef = React.useRef(null);
 
-  const contentLines = content.split(". ").map((line) => line.trim()).filter(Boolean);
+const contentLines = content.split(/\n\s*\n/).map(line => line.trim()).filter(Boolean);
+
 
   useEffect(() => {
     if (expanded) {
@@ -67,17 +68,17 @@ const BlogCard = ({ title, preview, content, index }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {contentLines.slice(0, revealedLines).map((line, idx) => (
-          <motion.p
-            key={idx}x
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: idx * 0.1 }}
-            className="mb-2"
-          >
-           {parse(content)}
-          </motion.p>
-        ))}
+       {contentLines.slice(0, revealedLines).map((line, idx) => (
+  <motion.p
+    key={idx}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3, delay: idx * 0.1 }}
+    className="mb-2"
+  >
+    {parse(line)}
+  </motion.p>
+))}
       </motion.div>
     </AnimatePresence>
   ) : (
