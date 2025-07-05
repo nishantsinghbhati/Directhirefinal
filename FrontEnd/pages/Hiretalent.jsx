@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import TestimonialSection from "../section/Testimonials";
 import Footer from "../section/Footer";
-import { candidatereviews } from "../constants/index.js";
+import { hiringcompanysreviews } from "../constants/index.js";
 import { Helmet } from "react-helmet-async";
 
 export default function HireTalentPage() {
@@ -227,7 +227,7 @@ export default function HireTalentPage() {
       </div>
 
       {/* Testimonials and Footer */}
-      <TestimonialSection testimonials={candidatereviews} />
+      <TestimonialSection testimonials={hiringcompanysreviews} />
       <Footer />
     </div>
   );

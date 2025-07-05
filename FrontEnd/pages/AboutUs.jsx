@@ -111,7 +111,7 @@ const AboutUs = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-10 text-center"
         >
-          <h2 className="text-4xl font-semibold mb-6">What We Specialize In</h2>
+         
           <IndustrySpecializations />
           <Experience />
         </motion.section>

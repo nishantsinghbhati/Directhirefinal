@@ -217,6 +217,80 @@ const industryData = [
         buttonSecondary: "Talk to Consultant",
     };
 
+
+const hiringcompanysreviews = [
+  {
+    name: 'Handpickd',
+    position: 'Aamir Khan, Senior HR, Handpickd',
+    image: '/handpick.JPG',
+    review: 'We had to scale rapidly and hire over 30 Inside Sales Representatives and City Marketing Managers in less than a month—Ayushi and her team pulled it off seamlessly. From shortlisting and interviews to document collection and ensuring every candidate joined on time, Direct Hire handled it all. They understood our requirements better than most internal teams do!',
+    stars: 5
+  },
+
+    {
+    name: 'Yellow Hospitality and Tourism Pvt Ltd',
+    position: '— Divita Jain, HR Manager, Yellow Hospitality',
+    image: '/Yellow.JPG',
+    review: 'Finding the right candidates for roles like International Holiday Consultant and Accounts Executive isn’t easy in our industry, but Direct Hire delivered exactly what we needed. Their speed, quality of candidates, and professionalism made the entire process smooth and stress-free',
+    stars: 5
+  },
+
+    {
+    name: 'Sayesha Enterprises',
+    position: 'Rajiv Dhulia, Founder, Sayesha Enterprises',
+    image: '/Sayesha.JPG',
+    review: 'Hiring women for night shifts in an international BPO setup in Kolkata—and within budget—is a real challenge. Direct Hire not only accepted that challenge but exceeded expectations by placing over 20 quality candidates. Their effort, persistence, and understanding of our exact requirements truly stood out.',
+    stars: 5
+  },
+
+    {
+    name: 'Coreflex',
+    position: 'Deepak Kewlani, Founder, Coreflex',
+    image: '/icon+text(blue) transparent.png',
+    review: 'As a new brand in the activewear space, we needed enthusiastic and aligned team members. Direct Hire helped us build our founding team with people who genuinely believe in our vision. Couldn’t have asked for more.',
+    stars: 5
+  },
+
+    {
+    name: ' Ruva Skincare',
+    position: 'Reena Agarwal, Founder, Ruva Skincare',
+    image: '/Ruva.PNG',
+    review: 'We were just starting out and needed help building our backend operations team. Direct Hire stepped in and took care of it end-to-end. Their ability to understand our workflow and find people who matched our mindset was impressive.',
+    stars: 5
+  },
+
+    {
+    name: 'Altruist Technologies',
+    position: 'Joydeep Ray, Vice President, Altruist Technologies',
+    image: '/Altruist.PNG',
+    review: 'We’ve worked with many agencies, but what sets Direct Hire apart is their consistency and commitment. They take ownership of the roles and follow up rigorously until it’s closed. Great experience every time.',
+    stars: 5
+  },
+
+    {
+    name: 'Talli Tales',
+    position: ' Komal Agarwal, Co-Founder, Talli Tales',
+    image: '/Talli.PnG',
+    review: 'Hiring for the alcohol industry is a very niche task, especially in sales. Direct Hire helped us find the right candidate who understood both the industry and the nature of the product. Their approach was quick, focused, and efficient',
+    stars: 5
+  },
+
+    {
+    name: 'Prizma Academy',
+    position: ' Sahil Parnami, Founder, Prizma Academy',
+    image: '/Prizma.JPG',
+    review: 'We were expanding operations from Bangalore to Jaipur and needed to build a fresh team of Academic Counselors from scratch. Direct Hire helped us set up the entire hiring pipeline—from sourcing to onboarding—with complete ownership. Their local understanding and swift execution made the transition smooth and stress-free.',
+    stars: 5
+  },
+
+    {
+    name: 'Reenaas Fashion',
+    position: '',
+    image: '/reenas.JPG',
+    review: 'We recently needed to hire a shipping manager for Reenaas Fashion and decided to go through DirectHire in Jaipur. I was pleasantly surprised by how easy they made the whole process. The team really took the time to understand exactly what we were looking for n came back with some excellent candidates. We ended up hiring a perfect fit for the role. It’s clear that DirectHire knows what they’re doing n they care about getting it right. I highly recommend them if ur looking for reliable n efficient staffing help!',
+    stars: 5
+  },
+]    
 export{
     navLinks1,
     navLinks2,
@@ -226,5 +300,6 @@ export{
     sections,
     industryData,
     jobcontent,
-    hirecontent
+    hirecontent,
+    hiringcompanysreviews
 }
