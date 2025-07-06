@@ -43,7 +43,7 @@ useEffect(() => {
     return (
       <section id="hero" className="relative w-screen overflow-hidden pt-22" style={{
     backgroundImage: image ? `url(${image.base64})` : "none",
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   }}>
