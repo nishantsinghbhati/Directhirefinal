@@ -41,4 +41,5 @@ app.use('/apis/images', imageRoutes);
 app.use('/apis/logos', companylogosRoutes);
 app.use('/api/blogs', blogRoutesRoutes);
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
+
