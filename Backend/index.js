@@ -12,7 +12,25 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+    'https://yourfrontenddomain.com',
+    'http://localhost:5173', // Vite default
+    'http://127.0.0.1:5173'  // Optional, covers some local setups
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps, curl, postman)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
+}));;
 app.use(express.json()); // for JSON payloads
 app.use("/uploads", express.static("uploads")); // to serve resume files
 
