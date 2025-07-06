@@ -39,9 +39,9 @@ const StorySection = ({ title, text, image, reverse, style }) => (
 );
 
 const HeroSection = () => (
-  <header className="relative sm:mt-0 h-screen flex items-center justify-center">
+  <header className="relative mt-20 sm:min-h-screen sm:mt-0 min-h-screen flex items-center justify-center">
     <div className="text-black text-center px-4">
-      <div className="max-w-5xl mx-auto mb-20" style={{ position: 'relative' }}>
+      <div className="max-w-5xl mx-auto sm:mb-20 mb-9" style={{ position: 'relative' }}>
         <h1>
           <TextPressure
             text="About us"
