@@ -155,7 +155,7 @@ const Hiretalent = () => {
                                         whileHover="hover"
                                         className="inline-block cursor-pointer" // Make each word clickable/hoverable
                                     >
-                                        {`${word }   `} 
+                                       {word}&nbsp; 
                                     </motion.span>
                                 ))}
                             </motion.h3>

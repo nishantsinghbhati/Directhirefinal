@@ -147,7 +147,7 @@ const JobSeekerSection = () => {
                                         whileHover="hover"
                                         className="inline-block cursor-pointer" // Make each word clickable/hoverable
                                     >
-                                        {word}{" "} {/* Add a space after each word */}
+                                        {word}&nbsp; {/* Add a space after each word */}
                                     </motion.span>
                                 ))}
                             </motion.h3>
