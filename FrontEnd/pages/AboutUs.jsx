@@ -133,7 +133,7 @@ const AboutUs = () => {
                 showUserInfo={true}
                 enableTilt={true}
                
-                grainUrl=""
+                grainUrl="/grain.webp"
                 iconUrl="/logo.webp"
               />
             </div>
