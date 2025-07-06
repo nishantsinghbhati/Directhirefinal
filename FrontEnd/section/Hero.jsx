@@ -1,5 +1,5 @@
 import Iridescence from '../components/Button.jsx';
-
+import instance from "../src/lib/api.js";
 import { motion } from 'framer-motion';
 import "../src/assets/style.css"
 import useShowAnimation from '../hooks/useShowAnimation.js';
@@ -22,7 +22,7 @@ const bufferToBase64 = async (buffer, contentType) => {
 
 const fetchFirstImage = async () => {
   try {
-    const { data } = await axios.get('http://localhost:5000/apis/images');
+    const { data } = await instance.get('/apis/images');
     if (data && data.length > 0) {
       const first = data[0];
       const base64 = await bufferToBase64(first.imageBuffer.data, first.contentType);

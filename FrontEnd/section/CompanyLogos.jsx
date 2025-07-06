@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import instance from "../src/lib/api.js";
 
 const CompanyLogosCarousel = () => {
   const [companies, setCompanies] = useState([]);
@@ -18,7 +19,7 @@ const CompanyLogosCarousel = () => {
 
   const fetchCompanies = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/apis/logos'); // Change endpoint as needed
+      const { data } = await instance.get('/apis/logos'); // Change endpoint as needed
       const formattedCompanies = await Promise.all(data.map(async (company) => {
         const base64 = await bufferToBase64(company.imageBuffer.data, company.contentType);
         return {

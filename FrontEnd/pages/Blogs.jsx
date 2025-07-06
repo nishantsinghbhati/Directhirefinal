@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet-async";
 import Footer from "../section/Footer.jsx";
 import parse from "html-react-parser";
+import instance from "../src/lib/api.js";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const BlogCard = ({ title, preview, content, index }) => {
@@ -96,16 +98,15 @@ const BlogPage = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/api/blogs"); // Adjust if your endpoint is different
-        const data = await res.json();
-        setBlogs(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-        setLoading(false);
-      }
-    };
+  try {
+    const { data } = await instance.get("/api/blogs");
+    setBlogs(data);
+    setLoading(false);
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    setLoading(false);
+  }
+};
 
     fetchBlogs();
   }, []);

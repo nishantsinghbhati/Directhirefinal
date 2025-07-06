@@ -17,7 +17,8 @@ const allowedOrigins = [
     'https://yourfrontenddomain.com',
     'http://localhost:5173', // Vite default
     'http://127.0.0.1:5173',
-    'http://46.202.167.243:4173/'  // Optional, covers some local setups
+    'http://46.202.167.243:4173',
+    'http://localhost:4173/'  // Optional, covers some local setups
 ];
 
 app.use(cors({
