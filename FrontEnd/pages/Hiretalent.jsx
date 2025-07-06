@@ -36,7 +36,7 @@ export default function HireTalentPage() {
   return (
     <div className="bg-blue-200 min-h-screen">
       <Helmet>
-        <title>Job Seeker Application</title>
+        <title>Hiretalent Application</title>
         <meta name="description" content="Submit your application to find your dream job." />
       </Helmet>
       
