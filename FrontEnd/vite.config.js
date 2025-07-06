@@ -18,11 +18,11 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
-    host: 'localhost',
+    host: '0.0.0.0',
     strictPort: true,
     hmr: {
       protocol: 'ws',
-      host: 'localhost',
+      host: '46.202.167.243',
       port: 5173,
       clientPort: 5173,
       overlay: true,
