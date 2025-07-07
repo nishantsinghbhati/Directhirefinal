@@ -72,7 +72,7 @@ const Hero = () => {
       className="relative w-screen overflow-hidden pt-28"
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
