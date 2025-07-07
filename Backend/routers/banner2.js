@@ -1,5 +1,5 @@
 import express from "express";
-import Banner from '../schema/banner2';
+import Banner from '../schema/banner2.js';
 const router = express.Router();
 
 router.get("/", async (req, res) => {
