@@ -69,7 +69,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-screen overflow-hidden pt-22"
+      className="relative w-screen overflow-hidden pt-28"
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
         backgroundSize: "cover",
