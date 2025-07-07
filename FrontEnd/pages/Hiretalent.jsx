@@ -34,14 +34,14 @@ export default function HireTalentPage() {
   const onSubmit = useFormSubmit("/api/hire");
 
   return (
-    <div className="bg-blue-200 min-h-screen">
+    <div className="bg-blue-200 min-h-screen ">
       <Helmet>
         <title>Hiretalent Application</title>
         <meta name="description" content="Submit your application to find your dream job." />
       </Helmet>
       
       {/* Hero Title Section */}
-      <div className="text-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
+      <div className="text-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[ClashDisplay-Semibold] font-bold leading-tight">
             HIRE <span className="text-blue-700">TALENT</span>

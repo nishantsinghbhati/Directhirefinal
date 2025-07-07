@@ -25,7 +25,7 @@ const links = [
 
 const candidatereviews = [
   {
-    name: 'Xavier Ajay Gomes',
+    name: 'Siddharth Dhadda',
     position: 'Software Engineer',
     image: '/8.webp',
     review: 'The experts provided excellent consultation, which in turn helped me secure a position in a top organization.',
@@ -39,36 +39,36 @@ const candidatereviews = [
     stars: 4
   },
   {
-    name: 'Sachin Singh Rawat',
-    position: 'Backend Developer',
+    name: 'Xavier ajay gomes',
+    position: 'Customer support associate',
     image: '/1a.webp',
     review: 'The Direct Hire team is excellent at their work. They have so many companies for getting better opportunities for every candidate according to their interest, so they helped me get a good opportunity. Special thanks to Ayushi Ma\'am.',
     stars: 5
   },
   {
-    name: 'Aditya Prajapati',
-    position: 'Full Stack Developer',
+    name: 'Krish sharma',
+    position: 'Senior customer support',
     image: '/4a.webp',
     review: 'Throughout the process, the team was incredibly professional and supportive. They provided me with guidance at every stage and helped me in securing an opportunity that\'s the perfect fit for my skills and future.',
     stars: 5
   },
   {
-    name: 'Krish Sharma',
-    position: 'UI/UX Designer',
+    name: 'Sachin singh rawat',
+    position: 'Inside sales executive',
     image: '/6a.webp',
     review: 'Ayushi ma’am consistently provided me with support, which helped me to secure a job in a top organization in Gurgaon. She understood my requirements and connected me with the right opportunity.',
     stars: 5
   },
   {
     name: 'Harshita Saini',
-    position: 'Marketing Associate',
+    position: 'Academic counsellor',
     image: '/2a.webp',
     review: 'I didn\'t know that a consultancy can think from a candidate’s perspective! Priyanshi and Nitin were very helpful in salary negotiations.',
     stars: 4
   },
   {
     name: 'Sheffali Suman',
-    position: 'HR Executive',
+    position: 'Inside sales representative',
     image: '/5.webp',
     review: 'I had been experiencing problems in finding a suitable job opportunity; however, Nitin helped me in recognizing my skills and finding the right job.',
     stars: 5
@@ -88,8 +88,8 @@ const candidatereviews = [
     stars: 4
   },
   {
-    name: 'Karan Malhotra',
-    position: 'QA Engineer',
+    name: 'Yashwardhan sharma',
+    position: 'Business development executive',
     image: '/10.webp',
     review: 'I was amazed by the speed with which they responded and scheduled interviews for me. Their assistance helped me perform well in the interview and secure the job.',
     stars: 5

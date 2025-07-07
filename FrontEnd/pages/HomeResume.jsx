@@ -77,7 +77,7 @@ function Home() {
         minHeight: '100vh',
         py: 4, // Add some vertical padding to avoid content sticking to edges on smaller screens
       }}>
-        <Container maxWidth="md" sx={{ mt: 0, mb: 0, textAlign: 'center' }}> {/* Adjusted margins */}
+        <Container className='pt-24 sm:pt-0' maxWidth="md" sx={{ mt: 0, mb: 0, textAlign: 'center' }}> {/* Adjusted margins */}
           <Typography variant="h3" component="h1" gutterBottom>
             Create a <span style={{ color: '#1976d2' }}>job-winning</span> CV in minutes
           </Typography>
