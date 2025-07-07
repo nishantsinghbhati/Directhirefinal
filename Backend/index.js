@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./models/db.js";
 import apiRoutes from "./routers/formSApi.js";
 import imageRoutes from "./routers/banner.js"
+import bannerRoutes from "./routers/banner2.js"
 import companylogosRoutes from "./routers/companyLogo.js"
 import blogRoutesRoutes from './routers/blogRoutes.js';
 dotenv.config();
@@ -36,6 +37,7 @@ app.use("/uploads", express.static("uploads")); // to serve resume files
 
 app.use("/api", apiRoutes);
 app.use('/apis/images', imageRoutes);
+app.use('/apis/banners', bannerRoutes);
 app.use('/apis/logos', companylogosRoutes);
 app.use('/api/blogs', blogRoutesRoutes);
 const PORT = process.env.PORT || 5000;

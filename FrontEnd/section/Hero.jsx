@@ -7,9 +7,6 @@ import useShowAnimation from '../hooks/useShowAnimation.js';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const Hero = () => {
-    const [image, setImage] = useState(null);
-
 const bufferToBase64 = async (buffer, contentType) => {
   const blob = new Blob([new Uint8Array(buffer)], { type: contentType });
   return await new Promise((resolve, reject) => {
@@ -20,33 +17,66 @@ const bufferToBase64 = async (buffer, contentType) => {
   });
 };
 
-const fetchFirstImage = async () => {
-  try {
-    const { data } = await instance.get('/apis/images');
-    if (data && data.length > 0) {
-      const first = data[0];
-      const base64 = await bufferToBase64(first.imageBuffer.data, first.contentType);
-      setImage({
-        ...first,
-        base64,
-      });
-    }
-  } catch (error) {
-    console.error("Error fetching first image:", error);
-  }
-};
-useEffect(() => {
-  fetchFirstImage();
-}, []);
+const Hero = () => {
+  const [image, setImage] = useState(null);
+  const [banner, setBanner] = useState(null);
+  const navigate = useNavigate();
   const { showCard, showContent } = useShowAnimation();
- const navigate = useNavigate();
-    return (
-      <section id="hero" className="relative w-screen overflow-hidden pt-22" style={{
-    backgroundImage: image ? `url(${image.base64})` : "none",
-    backgroundSize: "contain",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}>
+
+  useEffect(() => {
+    const fetchFirstImage = async () => {
+      try {
+        const { data } = await instance.get('/apis/images');
+        if (data && data.length > 0) {
+          const first = data[0];
+          const base64 = await bufferToBase64(first.imageBuffer.data, first.contentType);
+          setImage({
+            ...first,
+            base64,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching first image:", error);
+      }
+    };
+
+    const fetchFirstBanner = async () => {
+      try {
+        const { data } = await instance.get('/apis/banners');
+        if (data && data.length > 0) {
+          const first = data[0];
+          const bannerBase64 = await bufferToBase64(first.imageBuffer.data, first.contentType);
+          setBanner({
+            ...first,
+            base64: bannerBase64,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching first banner:", error);
+      }
+    };
+
+    fetchFirstImage();
+    fetchFirstBanner();
+  }, []);
+
+  // Determine responsive image to use:
+  const isMobile = window.innerWidth <= 768;
+  const backgroundImage = isMobile
+    ? (banner?.base64 || image?.base64 || null)
+    : (image?.base64 || banner?.base64 || null);
+
+  return (
+    <section
+      id="hero"
+      className="relative w-screen overflow-hidden pt-22"
+      style={{
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
     
  
   <div className="relative z-20 hero-layout">
