@@ -76,7 +76,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="bg-white fixed w-full top-0 left-0 z-50 shadow-lg py-3 px-6 transition-all duration-300"
+      className="bg-white sticky w-full top-0 left-0 z-50 shadow-lg py-3 px-6 transition-all duration-300"
       initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : -100 }} // Animate based on isVisible
       transition={{ duration: 0.3 }}
