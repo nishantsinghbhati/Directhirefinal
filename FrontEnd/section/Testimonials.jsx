@@ -83,7 +83,7 @@ const TestimonialCard = ({ testimonial }) => {
                     ))}
                 </div>
                 <p className="text-gray-700 mb-4 italic text-sm">{testimonial.review}</p>
-                <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
                 <p className="text-sm text-gray-500">{testimonial.position}</p>
             </motion.div>
         </SpotlightCard>
