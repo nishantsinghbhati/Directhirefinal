@@ -71,7 +71,7 @@ const Hero = () => {
   return (
    <section
   id="hero"
-  className="relative w-screen h-screen overflow-hidden flex justify-center items-center"
+  className="relative min-w-fit min-h-fit overflow-hidden flex justify-center items-center"
 >
   {backgroundImage && (
     <img
