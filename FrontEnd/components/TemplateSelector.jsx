@@ -46,33 +46,72 @@ const templates = [
 
 const sampleData = {
   personalInfo: {
-    fullName: 'John Doe',
-    email: 'john.doe@example.com',
-    phone: '(123) 456-7890',
-    location: 'New York, NY',
-    summary: 'Experienced professional with a strong background in technology and innovation.',
-    photo: null,
+    fullName: "Alex Johnson",
+    email: "alex.johnson@example.com",
+    phone: "(555) 123-4567",
+    location: "San Francisco, CA",
+    summary: "Creative and detail-oriented Frontend Developer with 4+ years of experience building responsive, accessible, and user-centric web applications using React and modern JavaScript frameworks.",
+    linkedin: "https://linkedin.com/in/alexjohnson",
+    photo: "https://randomuser.me/api/portraits/men/75.jpg", // realistic sample profile photo
   },
   experience: [
     {
-      title: 'Senior Developer',
-      company: 'Tech Corp',
-      startDate: '2020',
-      endDate: 'Present',
-      description: 'Led development of key projects and mentored junior developers.',
+      position: "Frontend Developer",
+      company: "Innovate Labs",
+      startDate: "2021-05",
+      endDate: "Present",
+      description: `- Developed and maintained scalable React applications.\n- Optimized page load speed by 35%.\n- Collaborated closely with design teams to implement modern UI/UX patterns.`,
+    },
+    {
+      position: "Junior Frontend Developer",
+      company: "Web Creators",
+      startDate: "2019-08",
+      endDate: "2021-04",
+      description: `- Assisted in building responsive websites for clients.\n- Integrated REST APIs with frontend components.\n- Ensured cross-browser compatibility and accessibility.`,
+    },
+  ],
+  projects: [
+    {
+      name: "Portfolio Website",
+      startDate: "2023-01",
+      endDate: "2023-03",
+      technologies: "Next.js, Tailwind CSS, Framer Motion",
+      description: "Developed a personal portfolio website showcasing projects, blogs, and resume downloads with SEO optimization and animation-rich user interface.",
+    },
+    {
+      name: "E-commerce Platform",
+      startDate: "2022-06",
+      endDate: "2022-11",
+      technologies: "React, Redux, Node.js, Stripe",
+      description: "Built a full-stack e-commerce platform with secure payment integration, admin dashboard, and dynamic product listings.",
     },
   ],
   education: [
     {
-      degree: 'Bachelor of Science',
-      field: 'Computer Science',
-      school: 'University of Technology',
-      startDate: '2016',
-      endDate: '2020',
+      degree: "Bachelor of Science",
+      field: "Computer Science",
+      school: "University of California, Berkeley",
+      startDate: "2015-09",
+      endDate: "2019-06",
     },
   ],
-  skills: ['JavaScript', 'React', 'Node.js', 'Python'],
+  skills: [
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "HTML & CSS",
+    "Redux",
+    "Git",
+    "Responsive Design",
+    "API Integration",
+  ],
+  languages: [
+    { language: "English", proficiency: "Native" },
+    { language: "Spanish", proficiency: "Intermediate" },
+  ],
 };
+
 
 const TemplateSelector = ({ selectedTemplate, onSelect }) => {
   return (
