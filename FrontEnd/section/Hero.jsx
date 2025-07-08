@@ -71,13 +71,13 @@ const Hero = () => {
   return (
    <section
   id="hero"
-  className="relative min-w-fit min-h-fit overflow-hidden flex justify-center items-center"
+  className="relative w-screen h-screen overflow-hidden flex justify-center items-center"
 >
   {backgroundImage && (
     <img
       src={backgroundImage}
       alt="Hero Background"
-      className="absolute inset-0 w-full h-full object-contain"
+      className="absolute inset-0 min-w-full min-h-fit object-contain"
     />
   )}
   {/* Your hero content here */}
