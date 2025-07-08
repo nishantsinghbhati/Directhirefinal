@@ -58,12 +58,12 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0, duration: 0.6 }}
-            >
-              <IndustrySpecializations />
-              <section>
+            ><section className='mt-6 sm:mt-0'>
+              <IndustrySpecializations /></section>
+              <section className='mt-6 sm:mt-0'>
          <CompanyLogosCarousel/>
-        </section>
-              <Experience />
+        </section> <section className='mt-6 sm:mt-0'>
+              <Experience /></section>
             </motion.section>
 
             <section aria-label="Parallax Scroll Section">
