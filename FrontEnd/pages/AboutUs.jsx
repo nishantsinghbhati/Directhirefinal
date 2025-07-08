@@ -99,18 +99,13 @@ const AboutUs = () => {
       </div>
 
       <HeroSection />
-
-      <main>
-        {sections.map((section, index) => (
-          <StorySection key={index} {...section} />
-        ))}
-<section className="relative sm:min-h-[700px] min-h-screen overflow-hidden flex flex-col items-center px-4 py-10">
+<section className="relative sm:min-h-[700px] min-h-screen overflow-hidden flex flex-col justify-center items-center px-4 py-10">
           <h2 className="sm:text-8xl text-6xl font-[ClashDisplay-Semibold] text-center mb-12">
             Fou <span className="text-blue-700">nder</span>
           </h2>
 
-          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-10 w-full max-w-7xl">
-            <div className="flex-1 flex justify-center sm:justify-end">
+          <div className="flex flex-col justify-center sm:flex-row items-center sm:items-center gap-10 w-full max-w-7xl">
+            <div className="flex-1 flex justify-center ">
               <ProfileCard
                 name="Ayushi Agarwal"
                 title="Founder"
@@ -145,6 +140,11 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
+      <main>
+        {sections.map((section, index) => (
+          <StorySection key={index} {...section} />
+        ))}
+
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

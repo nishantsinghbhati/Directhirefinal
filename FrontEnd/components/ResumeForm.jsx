@@ -371,7 +371,7 @@ function ResumeForm({ formData, onFormDataChange }) {
                    ) : (
                       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                          <CloudUploadIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
-                         <Typography variant="body2" color="text.secondary">Drag 'n' drop a profile photo here, or click to select one</Typography>
+                         <Typography variant="body2" color="text.secondary">Drag 'n' drop a profile photo here, or click to select one (use 1:1 ratio image)</Typography>
                       </Box>
                    )}
                  </div>
