@@ -5,7 +5,7 @@ import "../src/assets/style.css";
 import useShowAnimation from '../hooks/useShowAnimation.js';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import LoadingSpinner from "../components/LoadingAnimation.jsx";
 const bufferToBase64 = async (buffer, contentType) => {
   const blob = new Blob([new Uint8Array(buffer)], { type: contentType });
   return await new Promise((resolve, reject) => {
@@ -70,7 +70,7 @@ const Hero = () => {
     >
       {isLoading ? (
         <div className="flex items-center justify-center h-full w-full bg-gray-100">
-          <div className="loader"></div> {/* Replace with your custom spinner if needed */}
+          <div className="loader"><LoadingSpinner /></div> {/* Replace with your custom spinner if needed */}
         </div>
       ) : (
         <>
