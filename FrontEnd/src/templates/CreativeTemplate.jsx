@@ -79,16 +79,16 @@ const ResumeTemplate = ({ data }) => {
           </Typography>
         </Box>
 
-        <Section className=' mt-'>
-          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Contact</Typography>
+        <Section className=' '>
+          <Typography className=' font-extrabold text-2xl mb-3' variant="subtitle1" gutterBottom>Contact</Typography>
           <hr />
-          <Typography className=' mb-3' variant="body2">Phone <br />{personalInfo.phone}</Typography>
-          <Typography className=' mb-3' variant="body2">Email <br /> {personalInfo.email}</Typography>
-          <Typography className=' mb-3' variant="body2">Location <br /> {personalInfo.location}</Typography>
+          <Typography className='text-[20px] mb-1' variant="body2">Phone <br /><span className='text-[13px]'>{personalInfo.phone}</span></Typography>
+          <Typography className='text-[20px] mb-1' variant="body2">Email <br /><span className='text-[13px]'> {personalInfo.email}</span></Typography>
+          <Typography className='text-[20px] mb-1' variant="body2">Location <br /><span className='text-[13px]'> {personalInfo.location}</span></Typography>
         </Section>
 
         <Section>
-          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Education</Typography>
+          <Typography className='font-extrabold text-2xl mb-3' variant="subtitle1" gutterBottom>Education</Typography>
           <hr />
           {education.map((edu, i) => (
             <Box key={i} mb={1}>
@@ -100,7 +100,7 @@ const ResumeTemplate = ({ data }) => {
         </Section>
 
         <Section>
-          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Expertise</Typography>
+          <Typography className='font-extrabold text-2xl mb-3' variant="subtitle1" gutterBottom>Skills</Typography>
           <hr />
           <BulletList>
             {skills.map((skill, i) => (
@@ -110,11 +110,11 @@ const ResumeTemplate = ({ data }) => {
         </Section>
 
         <Section>
-          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Language</Typography>
+          <Typography className='font-extrabold text-2xl mb-3' variant="subtitle1" gutterBottom>Language</Typography>
           <hr />
           <BulletList>
-            {languages.map((lang, i) => (
-              <li key={i}><Typography variant="body2">{lang.language}</Typography></li>
+            {languages.map((lang, index) => (
+              <li key={index}><Typography variant="body2">{lang.language} - {lang.proficiency}</Typography></li>
             ))}
           </BulletList>
         </Section>

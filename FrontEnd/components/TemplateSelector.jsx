@@ -115,7 +115,7 @@ const sampleData = {
 
 const TemplateSelector = ({ selectedTemplate, onSelect }) => {
   return (
-    <Box sx={{ py: 20 }} >
+    <Box sx={{ py: 5 }} >
       <Typography variant="h4" component="h1"  gutterBottom align="center">
         Choose Your Resume Template
       </Typography>

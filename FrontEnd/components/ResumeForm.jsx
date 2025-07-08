@@ -366,7 +366,7 @@ function ResumeForm({ formData, onFormDataChange }) {
                    {formData.personalInfo.photo ? (
                       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Avatar src={formData.personalInfo.photo} sx={{ width: 80, height: 80, mb: 2 }} />
-                        <Typography variant="body2" color="text.secondary">Photo uploaded. Drag and drop or click to replace.</Typography>
+                        <Typography variant="body2" color="text.secondary">Photo uploaded. Drag and drop or click to replace.(use 1:1 ratio image)</Typography>
                       </Box>
                    ) : (
                       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

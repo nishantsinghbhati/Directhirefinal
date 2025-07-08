@@ -104,19 +104,7 @@ const AboutUs = () => {
         {sections.map((section, index) => (
           <StorySection key={index} {...section} />
         ))}
-
-        <motion.section
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-10 text-center"
-        >
-         
-          <IndustrySpecializations />
-          <Experience />
-        </motion.section>
-
-        <section className="relative sm:min-h-[700px] min-h-screen overflow-hidden flex flex-col items-center px-4 py-10">
+<section className="relative sm:min-h-[700px] min-h-screen overflow-hidden flex flex-col items-center px-4 py-10">
           <h2 className="sm:text-8xl text-6xl font-[ClashDisplay-Semibold] text-center mb-12">
             Fou <span className="text-blue-700">nder</span>
           </h2>
@@ -157,6 +145,18 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mt-10 text-center"
+        >
+         
+          <IndustrySpecializations />
+          <Experience />
+        </motion.section>
+
+        
 
         <section>
           <CompanyLogosCarousel />
