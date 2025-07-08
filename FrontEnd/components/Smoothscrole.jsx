@@ -7,7 +7,7 @@ const SmoothScrollWrapper = ({ children }) => {
     <ReactLenis
       root
       options={{
-        lerp: 0.05,
+        lerp: 0.12,
       }}
     >
       {children}
