@@ -24,21 +24,7 @@ const Hero = () => {
   const { showCard, showContent } = useShowAnimation();
 
   useEffect(() => {
-    const fetchFirstImage = async () => {
-      try {
-        const { data } = await instance.get('/apis/images');
-        if (data && data.length > 0) {
-          const first = data[0];
-          const base64 = await bufferToBase64(first.imageBuffer.data, first.contentType);
-          setImage({
-            ...first,
-            base64,
-          });
-        }
-      } catch (error) {
-        console.error("Error fetching first image:", error);
-      }
-    };
+    
 
     const fetchFirstBanner = async () => {
       try {
@@ -53,6 +39,22 @@ const Hero = () => {
         }
       } catch (error) {
         console.error("Error fetching first banner:", error);
+      }
+    };
+
+    const fetchFirstImage = async () => {
+      try {
+        const { data } = await instance.get('/apis/images');
+        if (data && data.length > 0) {
+          const first = data[0];
+          const base64 = await bufferToBase64(first.imageBuffer.data, first.contentType);
+          setImage({
+            ...first,
+            base64,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching first image:", error);
       }
     };
 
