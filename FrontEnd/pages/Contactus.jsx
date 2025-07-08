@@ -6,7 +6,7 @@ import { useFormSubmit } from "../hooks/useFormSubmit.js";
 import { contactusSchema } from "../src/schema/contactusSchema.js";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
-
+import Navbar from "../section/NavBar.jsx";
 const ContactUs = () => {
   const formRef = useRef(null);
   const handleHover = (e) => {
@@ -34,6 +34,7 @@ const ContactUs = () => {
         <title>Contact Us | DirectHire</title>
         <meta name="description" content="Contact DirectHire to discuss your hiring or job seeking needs." />
       </Helmet>
+      <Navbar/>
       <div className='text-4xl font-bold text-center mb-4 px-6 pt-20 max-w-5xl mx-auto'>
         <h1 className='sm:text-8xl text-6xl font-[ClashDisplay-Semibold]'>CONTACT <span className='text-blue-700'>US</span></h1>
       </div>

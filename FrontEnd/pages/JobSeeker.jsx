@@ -10,7 +10,7 @@ import { jobSeekerSchema } from "../src/schema/jobSeekerSchema.js";
 import { useNavigate } from 'react-router-dom';
 import {candidatereviews} from "../constants/index.js"
 import { Helmet } from 'react-helmet-async';
-
+import Navbar from "../section/NavBar.jsx";
 export default function JobSeekerForm() {
   const navigate = useNavigate();
   const {
@@ -59,7 +59,7 @@ export default function JobSeekerForm() {
         <meta property="og:title" content="Job Seeker Application" />
         <meta property="og:description" content="Submit your application to find your dream job." />
       </Helmet>
-        
+        <Navbar/>
       {/* Hero Title Section */}
       <div className="text-center pt-20 px-4 sm:px-6 lg:px-8  sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto">

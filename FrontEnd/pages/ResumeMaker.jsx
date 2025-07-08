@@ -9,6 +9,7 @@ import Home from './HomeResume';
 import ResumeBuilder from './ResumeBuilder';
 import Templates from './Templates';
 import Footer from "../section/Footer";
+import Navbar from "../section/NavBar";
 
 const toastConfig = {
   position: "top-right",
@@ -26,6 +27,7 @@ const toastConfig = {
 function ResumeMaker() {
   return (
     <ThemeProvider theme={theme}>
+      <Navbar/>
       <Routes>
         <Route index element={<Home />} />
         <Route path="templates" element={<Templates />} />

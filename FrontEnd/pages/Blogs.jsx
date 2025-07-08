@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import Footer from "../section/Footer.jsx";
 import parse from "html-react-parser";
 import instance from "../src/lib/api.js";
-
+import Navbar from "../section/NavBar.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const BlogCard = ({ title, preview, content, index }) => {
@@ -133,7 +133,7 @@ const BlogPage = () => {
   {/* Canonical Link */}
   <link rel="canonical" href="https://yourdomain.com/blogs" />
 </Helmet>
-
+ <Navbar/>
       <div className="relative min-h-screen bg-white text-black overflow-x-hidden">
         <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 via-white to-blue-100 opacity-30 animate-pulse z-0" />
 

@@ -10,7 +10,7 @@ import TestimonialSection from "../section/Testimonials.jsx";
 import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
 import { candidatereviews } from "../constants/index.js";
 import { sections } from "../constants/index.js";
-
+import Navbar from "../section/NavBar.jsx";
 const StorySection = ({ title, text, image, reverse, style }) => (
   <section className={`py-16 px-6 md:flex ${reverse ? "flex-row-reverse" : ""} items-center max-w-7xl mx-auto`}>
     <article className="md:w-1/2 p-4">
@@ -81,7 +81,7 @@ const AboutUs = () => {
         <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg" />
         <link rel="canonical" href="https://yourdomain.com/about" />
       </Helmet>
-
+<Navbar/>
       <div className="absolute w-full h-full object-cover bg-blue-200 -z-10">
         <div style={{ width: '100%', height: '100%', position: 'relative' }}>
           <DotGrid

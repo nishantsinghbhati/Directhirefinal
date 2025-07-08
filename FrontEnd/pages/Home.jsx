@@ -14,7 +14,7 @@ import Footer from '../section/Footer';
 import { TextParallaxContentExample } from '../components/scrole';
 import CompanyLogosCarousel from "../section/CompanyLogos.jsx";
 import {candidatereviews} from "../constants/index.js"
-
+import Navbar from "../section/NavBar.jsx";
 const Home = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [revealComplete, setRevealComplete] = useState(false);
@@ -47,6 +47,7 @@ const Home = () => {
 
       {revealComplete && (
         <>
+         <Navbar />
           <header>
             <Hero />
           </header>

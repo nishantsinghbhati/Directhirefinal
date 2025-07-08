@@ -10,6 +10,7 @@ import TestimonialSection from "../section/Testimonials";
 import Footer from "../section/Footer";
 import { hiringcompanysreviews } from "../constants/index.js";
 import { Helmet } from "react-helmet-async";
+import Navbar from "../section/NavBar.jsx";
 
 export default function HireTalentPage() {
   const containerRef = useRef(null);
@@ -39,7 +40,7 @@ export default function HireTalentPage() {
         <title>Hiretalent Application</title>
         <meta name="description" content="Submit your application to find your dream job." />
       </Helmet>
-      
+      <Navbar/>
       {/* Hero Title Section */}
       <div className="text-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto">

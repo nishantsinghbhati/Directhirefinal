@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import Navbar from "../section/NavBar.jsx";
 import Home from "../pages/Home";
 import ContactUs from "../pages/Contactus.jsx";
 import LoadingSpinner from "../components/LoadingAnimation.jsx";  // Import your spinner here
@@ -20,7 +19,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
-      <Navbar />
+     
       {/* 👇 This key prop forces rerender on route change */}
       <div key={location.pathname}>
         <Routes location={location} key={location.pathname}>
