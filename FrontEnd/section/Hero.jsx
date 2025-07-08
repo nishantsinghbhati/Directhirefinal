@@ -75,7 +75,7 @@ const Hero = () => {
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
         backgroundSize: "contain",
-        backgroundPosition: "center",
+ 
         backgroundRepeat: "no-repeat",
       }}
     >
