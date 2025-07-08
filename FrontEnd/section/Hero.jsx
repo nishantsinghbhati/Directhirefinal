@@ -69,16 +69,19 @@ const Hero = () => {
     : (image?.base64 || banner?.base64 || null);
 
   return (
-    <section
-      id="hero"
-      className="relative w-screen overflow-hidden"
-      style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
-        backgroundSize: "contain",
- 
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+   <section
+  id="hero"
+  className="relative w-screen h-screen overflow-hidden flex justify-center items-center"
+>
+  {backgroundImage && (
+    <img
+      src={backgroundImage}
+      alt="Hero Background"
+      className="absolute inset-0 w-full h-full object-contain"
+    />
+  )}
+  {/* Your hero content here */}
+
     
  
   <div className="relative z-20 hero-layout">
