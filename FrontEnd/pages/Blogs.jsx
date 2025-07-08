@@ -137,7 +137,7 @@ const BlogPage = () => {
       <div className="relative min-h-screen bg-white text-black overflow-x-hidden">
         <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 via-white to-blue-100 opacity-30 animate-pulse z-0" />
 
-        <div className="relative z-10 flex flex-col items-center py-24 px-6 max-w-5xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center py-14 px-6 max-w-5xl mx-auto">
           <motion.h1
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

@@ -42,7 +42,7 @@ export default function HireTalentPage() {
       </Helmet>
       <Navbar/>
       {/* Hero Title Section */}
-      <div className="text-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
+      <div className="text-center px-4 sm:px-6 lg:px-8 pt-6 sm:pt-6 lg:pt-6 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[ClashDisplay-Semibold] font-bold leading-tight">
             HIRE <span className="text-blue-700">TALENT</span>

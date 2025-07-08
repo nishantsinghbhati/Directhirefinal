@@ -61,7 +61,7 @@ export default function JobSeekerForm() {
       </Helmet>
         <Navbar/>
       {/* Hero Title Section */}
-      <div className="text-center pt-20 px-4 sm:px-6 lg:px-8  sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
+      <div className="text-center pt-6 px-4 sm:px-6 lg:px-8  sm:pt-6 lg:pt-6 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[ClashDisplay-Semibold] leading-tight">
             JOB <span className="text-blue-700">SEEKER</span>
