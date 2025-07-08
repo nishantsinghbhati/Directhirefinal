@@ -83,18 +83,21 @@ const ModernTemplate = ({ data }) => {
           <Photo src={personalInfo.photo} alt={personalInfo.fullName} />
         )}
         <ContactInfo>
-          <Typography variant="h4" gutterBottom>
+          <Typography className='text-3xl mb-3' variant="h4" gutterBottom>
             {personalInfo.fullName || ''}
           </Typography>
           <Typography variant="body1" color="text.secondary" gutterBottom>
-            {personalInfo.email || ''} • {personalInfo.phone || ''}
+            {personalInfo.email || ''} 
           </Typography>
           <Typography variant="body2" color="text.secondary">
-             {personalInfo.location}
+            Phone: {personalInfo.phone || ''}
+          </Typography>
+           <Typography variant="body2" color="text.secondary">
+           Location: {personalInfo.location}
           </Typography>
           {personalInfo.linkedin && (
             <Typography variant="body2" color="text.secondary">
-              🔗 <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+              Linkedin: <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
                 {personalInfo.linkedin}
               </a>
             </Typography>

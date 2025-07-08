@@ -1,5 +1,4 @@
-
-import { Box, Typography, Paper} from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const ResumeContainer = styled(Paper)`
@@ -41,13 +40,37 @@ const BulletList = styled('ul')`
 `;
 
 const ResumeTemplate = ({ data }) => {
-  const { personalInfo = {}, experience = [], education = [], skills = [], languages = [], references = [] } = data || {};
+  const {
+    personalInfo = {},
+    experience = [],
+    education = [],
+    skills = [],
+    languages = [],
+    references = [],
+    projects = []
+  } = data || {};
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const [year, month] = dateString.split('-');
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    if (month && year) {
+      const monthName = monthNames[parseInt(month, 10) - 1];
+      return `${monthName} ${year}`;
+    }
+    return dateString;
+  };
 
   return (
     <ResumeContainer>
       <LeftColumn>
         <Box display="flex" flexDirection="column" alignItems="center">
-          {personalInfo.photo && <ProfilePhoto src={personalInfo.photo} alt={personalInfo.fullName} />}
+          {personalInfo.photo && (
+            <ProfilePhoto src={personalInfo.photo} alt={personalInfo.fullName} />
+          )}
           <Typography variant="h6" style={{ color: 'white', fontWeight: 'bold', textAlign: 'center' }}>
             {personalInfo.fullName}
           </Typography>
@@ -56,16 +79,16 @@ const ResumeTemplate = ({ data }) => {
           </Typography>
         </Box>
 
-        <Section>
-          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Contact</Typography>
+        <Section className=' mt-'>
+          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Contact</Typography>
           <hr />
-          <Typography variant="body2">Phone <br />{personalInfo.phone}</Typography>
-          <Typography variant="body2">Email <br /> {personalInfo.email}</Typography>
-          <Typography variant="body2">Location <br /> {personalInfo.location}</Typography>
+          <Typography className=' mb-3' variant="body2">Phone <br />{personalInfo.phone}</Typography>
+          <Typography className=' mb-3' variant="body2">Email <br /> {personalInfo.email}</Typography>
+          <Typography className=' mb-3' variant="body2">Location <br /> {personalInfo.location}</Typography>
         </Section>
 
         <Section>
-          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Education</Typography>
+          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Education</Typography>
           <hr />
           {education.map((edu, i) => (
             <Box key={i} mb={1}>
@@ -77,39 +100,70 @@ const ResumeTemplate = ({ data }) => {
         </Section>
 
         <Section>
-          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Expertise</Typography>
+          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Expertise</Typography>
           <hr />
           <BulletList>
-            {skills.map((skill, i) => <li key={i}><Typography variant="body2">{skill}</Typography></li>)}
+            {skills.map((skill, i) => (
+              <li key={i}><Typography variant="body2">{skill}</Typography></li>
+            ))}
           </BulletList>
         </Section>
 
         <Section>
-          <Typography className='text-3xl mb-3' variant="subtitle1" gutterBottom>Language</Typography>
+          <Typography className=' mb-3' variant="subtitle1" gutterBottom>Language</Typography>
           <hr />
           <BulletList>
-            {languages.map((lang, i) => <li key={i}><Typography variant="body2">{lang.language}</Typography></li>)}
+            {languages.map((lang, i) => (
+              <li key={i}><Typography variant="body2">{lang.language}</Typography></li>
+            ))}
           </BulletList>
         </Section>
       </LeftColumn>
 
       <RightColumn>
-        <Section>
-          <Typography variant="body1" gutterBottom>{personalInfo.summary}</Typography>
-        </Section>
+        {personalInfo.summary && (
+          <Section>
+            <Typography variant="body1" gutterBottom>{personalInfo.summary}</Typography>
+          </Section>
+        )}
 
-        <Section>
-          <Typography className='text-3xl ' variant="h6" gutterBottom>Experience</Typography>
-          <hr className='bg-black mt-6' />
-          {experience.map((exp, i) => (
-            <Box key={i} mb={2}>
-              <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>{exp.startDate} - {exp.endDate}</Typography>
-              <Typography variant="body2" style={{ fontWeight: 'bold' }}>{exp.position}</Typography>
-              <Typography variant="body2">{exp.company}</Typography>
-              <Typography variant="body2">{exp.description}</Typography>
-            </Box>
-          ))}
-        </Section>
+        {experience.length > 0 && (
+          <Section>
+            <Typography variant="h6" gutterBottom>Experience</Typography>
+            <hr className='bg-black mt-6' />
+            {experience.map((exp, i) => (
+              <Box key={i} mb={2}>
+                <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>
+                  {formatDate(exp.startDate)} - {formatDate(exp.endDate)}
+                </Typography>
+                <Typography variant="body2" style={{ fontWeight: 'bold' }}>{exp.position}</Typography>
+                <Typography variant="body2">{exp.company}</Typography>
+                <Typography variant="body2" style={{ whiteSpace: 'pre-line' }}>{exp.description}</Typography>
+              </Box>
+            ))}
+          </Section>
+        )}
+
+        {projects.length > 0 && (
+          <Section>
+            <Typography variant="h6" gutterBottom>Projects</Typography>
+            <hr className='bg-black mt-6' />
+            {projects.map((project, i) => (
+              <Box key={i} mb={2}>
+                <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>{project.name}</Typography>
+                <Typography variant="body2" style={{ fontWeight: 'bold' }}>
+                  {formatDate(project.startDate)} - {formatDate(project.endDate)}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Technologies: {project.technologies}
+                </Typography>
+                <Typography variant="body2" style={{ whiteSpace: 'pre-line' }}>
+                  {project.description}
+                </Typography>
+              </Box>
+            ))}
+          </Section>
+        )}
 
         {references.length > 0 && (
           <Section>
