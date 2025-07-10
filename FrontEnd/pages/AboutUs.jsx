@@ -136,6 +136,10 @@ const AboutUs = () => {
         candidates not finding the right jobs or companies not being able to find the right talent 
         with the skills required for the jobs. In both scenarios, it would often lead to either the 
         candidate leaving the job or vice versa.
+        <br /><br />
+        That’s exactly why I started Direct Hire—to make hiring simple, human and effective. Whether
+        you’re a company looking for the right people or a candidate looking for the right role!
+      
               </p>
             </div>
           </div>

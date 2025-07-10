@@ -171,16 +171,16 @@ const ModernTemplate = ({ data }) => {
           <Typography variant="h6" style={{ fontSize: '1.2rem', fontWeight: 600, color: '#1976d2', marginBottom: '0.5rem', borderBottom: '2px solid #1976d2', paddingBottom: '0.25rem' }}>Skills</Typography>
           <SkillsList>
             {skills.map((skill, index) => (
-              <SkillChip key={index}>{skill}</SkillChip>
+              <p key={index}>•  {skill}</p>
             ))}
           </SkillsList>
         </Section>
       )}
 
       {languages.length > 0 && (
-        <Section>
+        <Section className='mt-10'>
           <Typography variant="h6" style={{ fontSize: '1.2rem', fontWeight: 600, color: '#1976d2', marginBottom: '0.5rem', borderBottom: '2px solid #1976d2', paddingBottom: '0.25rem' }}>Languages</Typography>
-          <Box display="flex" flexWrap="wrap" gap={2}>
+          <Box  >
             {languages.map((lang, index) => (
               <Box key={index}>
                 <Typography variant="body1">

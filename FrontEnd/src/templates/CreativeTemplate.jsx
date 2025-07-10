@@ -102,21 +102,21 @@ const ResumeTemplate = ({ data }) => {
         <Section>
           <Typography className='font-extrabold text-2xl mb-3' variant="subtitle1" gutterBottom>Skills</Typography>
           <hr />
-          <BulletList>
+          
             {skills.map((skill, i) => (
-              <li key={i}><Typography variant="body2">{skill}</Typography></li>
+              <li key={i}><Typography variant="body2">• {skill}</Typography></li>
             ))}
-          </BulletList>
+        
         </Section>
 
         <Section>
           <Typography className='font-extrabold text-2xl mb-3' variant="subtitle1" gutterBottom>Language</Typography>
           <hr />
-          <BulletList>
+         
             {languages.map((lang, index) => (
-              <li key={index}><Typography variant="body2">{lang.language} - {lang.proficiency}</Typography></li>
+              <Box key={index} mb={1}><Typography variant="body2">{lang.language} - {lang.proficiency}</Typography></Box>
             ))}
-          </BulletList>
+        
         </Section>
       </LeftColumn>
 

@@ -609,17 +609,7 @@ function ResumeForm({ formData, onFormDataChange }) {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Description"
-                      value={edu.description || ''}
-                      onChange={(e) => handleEducationChange(index, 'description', e.target.value)}
-                      multiline
-                      rows={3}
-                      required
-                    />
-                  </Grid>
+                 
                   <Grid item xs={12}>
                     <Button
                       startIcon={<DeleteIcon />}

@@ -46,7 +46,7 @@ const PreviewSection = styled(Box)`
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: sticky;
   top: 2rem;
-  height: calc(100vh - 4rem);
+  height: calc(150vh - 4rem);
   display: flex;
   flex-direction: column;
 `;
