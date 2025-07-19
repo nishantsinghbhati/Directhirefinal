@@ -17,27 +17,7 @@ connectDB();
 const app = express();
 
 // CORS Config
-const allowedOrigins = [
-    'https://www.directhire.in',
-    'https://directhire.in',
-    'directhire.in',
-    'http://localhost:5173'
-    ,'http://localhost:5178'
-    ,'http://localhost:4000'
-    ,'http://192.168.1.10:5178' // For local dev
-];
-
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin)) {
-            return callback(null, true);
-        } else {
-            return callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
