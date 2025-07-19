@@ -23,7 +23,8 @@ const allowedOrigins = [
     'directhire.in',
     'http://localhost:5173'
     ,'http://localhost:5178'
-    ,'http://localhost:4000' // For local dev
+    ,'http://localhost:4000'
+    ,'http://192.168.1.10:5178' // For local dev
 ];
 
 app.use(cors({
