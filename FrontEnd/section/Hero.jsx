@@ -33,7 +33,10 @@ const Hero = () => {
   useEffect(() => {
     const fetchAndSetImage = async () => {
       try {
-        let endpoint = isMobile ? "/apis/banners" : "/apis/images";
+        let endpoint = isMobile
+  ? "https://www.directhire.in/static/banners/mobile/banner.jpg"
+  : "https://www.directhire.in/static/banners/desktop/banner.jpg";
+
         const { data } = await instance.get(endpoint);
         if (data && data.length > 0) {
           const first = data[0];

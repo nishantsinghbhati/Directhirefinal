@@ -17,7 +17,8 @@ const app = express();
 const allowedOrigins = [
     'https://www.directhire.in' ,
     'https://directhire.in',
-    'directhire.in' // Optional, covers some local setups
+    'directhire.in' 
+    ,'http://localhost:5173/'// Optional, covers some local setups
 ];
 
 app.use(cors({
