@@ -45,7 +45,7 @@ app.use(express.json());
 app.use(fileUpload()); // ✅ New
 
 // Serve static images
-app.use("/uploads", express.static("uploads"));
+
 // Serve static images from correct folder inside the project
 app.use("/static/banners/desktop", express.static(path.join(__dirname, "banners/desktop")));
 app.use("/static/banners/mobile", express.static(path.join(__dirname, "banners/mobile")));
