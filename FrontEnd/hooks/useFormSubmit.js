@@ -28,7 +28,7 @@ export const useFormSubmit = (endpoint) => {
        
       }
 
-      await axios.post(endpoint, payload, config);
+      await axios.post(endpoint, payload);
       toast.success("Submitted successfully!", { id: toastId });
       reset();
     } catch (error) {
