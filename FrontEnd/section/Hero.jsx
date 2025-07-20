@@ -31,37 +31,30 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const fetchAndSetImage = async () => {
-      try {
-        let endpoint = isMobile
-  ? "https://www.directhire.in/static/banners/mobile/banner.jpg"
-  : "https://www.directhire.in/static/banners/desktop/banner.jpg";
+   const fetchAndSetImage = async () => {
+  try {
+    const endpoint = isMobile
+      ? "http://localhost:5000/static/banners/mobile/banner.png"
+      : "http://localhost:5000/static/banners/desktop/banner.png";
 
-        const { data } = await instance.get(endpoint);
-        if (data && data.length > 0) {
-          const first = data[0];
-          const base64 = await bufferToBase64(first.imageBuffer.data, first.contentType);
+    // Preload the image
+    const img = new Image();
+    img.src = endpoint;
 
-          // Preload image before showing
-          const img = new Image();
-          img.src = base64;
-          img.onload = () => {
-            setBackgroundImage(base64);
-            setIsLoading(false);
-          };
-          img.onerror = () => {
-            console.error("Failed to load hero image.");
-            setIsLoading(false);
-          };
-        } else {
-          console.error("No images found.");
-          setIsLoading(false);
-        }
-      } catch (error) {
-        console.error("Error fetching hero image:", error);
-        setIsLoading(false);
-      }
+    img.onload = () => {
+      setBackgroundImage(endpoint);
+      setIsLoading(false);
     };
+
+    img.onerror = () => {
+      console.error("Failed to load hero image.");
+      setIsLoading(false);
+    };
+  } catch (error) {
+    console.error("Error fetching hero image:", error);
+    setIsLoading(false);
+  }
+};
 
     fetchAndSetImage();
   }, [isMobile]);
