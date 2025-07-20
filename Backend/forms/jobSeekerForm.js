@@ -12,6 +12,8 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 // 🟢 Job Seeker Form
 router.post("/job", upload.single("resume"), async (req, res) => {
+   console.log("Body:", req.body);
+  console.log("File:", req.file); 
   const { fullname, dob, email, phone, city, currentctc, expectedctc, gender, company, experience, education } = req.body;
   const resumeFile = req.file;
 
