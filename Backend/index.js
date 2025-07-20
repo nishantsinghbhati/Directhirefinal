@@ -42,7 +42,7 @@ app.use(cors({
 app.use(express.json()); // for JSON payloads
 app.use("/uploads", express.static("uploads")); // to serve resume files
 app.use(express.json());
-app.use(fileUpload()); // ✅ New
+
 
 // Serve static images
 

@@ -1,7 +1,7 @@
 import express from "express";
 import contactformRoutes from "../forms/contactForm.js";
-import joobseekerformRoutes from "../forms/hireForm.js";
-import hireformRoutes from "../forms/jobSeekerForm.js";
+import hireformRoutes from "../forms/hireForm.js";
+import joobseekerformRoutes from "../forms/jobSeekerForm.js";
 
 const router = express.Router();
 
