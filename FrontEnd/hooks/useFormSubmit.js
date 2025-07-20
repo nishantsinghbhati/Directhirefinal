@@ -25,9 +25,7 @@ export const useFormSubmit = (endpoint) => {
         }
 
         payload = formData;
-        config.headers = {
-          "Content-Type": "multipart/form-data",
-        };
+       
       }
 
       await axios.post(endpoint, payload, config);
