@@ -34,8 +34,8 @@ const Hero = () => {
    const fetchAndSetImage = async () => {
   try {
     const endpoint = isMobile
-      ? "http://localhost:5000/static/banners/mobile/banner.png"
-      : "http://localhost:5000/static/banners/desktop/banner.png";
+      ? "https://api.directhire.in/static/banners/mobile/banner.png"
+      : "https://api.directhire.in/static/banners/desktop/banner.png";
 
     // Preload the image
     const img = new Image();
