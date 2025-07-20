@@ -2,39 +2,41 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./models/db.js";
+import fileUpload from "express-fileupload"; // ✅ New
 
 import apiRoutes from "./routers/formSApi.js";
-import imageRoutes from "./routers/banner.js";        // Existing MongoDB banner (desktop)
-import bannerRoutes from "./routers/banner2.js";      // Existing MongoDB banner (mobile)
+import imageRoutes from "./routers/banner.js";
+import bannerRoutes from "./routers/banner2.js";
 import companylogosRoutes from "./routers/companyLogo.js";
 import blogRoutesRoutes from './routers/blogRoutes.js';
 
-dotenv.config();
+import desktopBannerRoutes from "./routers/desktopBannerRoutes.js";  // ✅ New
+import mobileBannerRoutes from "./routers/mobileBannerRoutes.js";    // ✅ New
 
-// Connect to MongoDB for existing features (form, blog, logos)
+dotenv.config();
 connectDB();
 
 const app = express();
 
-// CORS Config
 app.use(cors());
-
 app.use(express.json());
+app.use(fileUpload()); // ✅ New
 
-// ✅ Serve Resume Uploads (if still used)
+// Serve static images
 app.use("/uploads", express.static("uploads"));
-
-// ✅ NEW: Serve banner images from VPS file system
 app.use("/static/banners/desktop", express.static("uploads/banners/desktop"));
 app.use("/static/banners/mobile", express.static("uploads/banners/mobile"));
 
-// ✅ Existing MongoDB-based routes (still needed)
+// API routes
 app.use("/api", apiRoutes);
-app.use("/apis/images", imageRoutes);           // Fetch desktop banner from MongoDB (optional)
-app.use("/apis/banners", bannerRoutes);         // Fetch mobile banner from MongoDB (optional)
+app.use("/apis/images", imageRoutes);
+app.use("/apis/banners", bannerRoutes);
 app.use("/apis/logos", companylogosRoutes);
 app.use("/api/blogs", blogRoutesRoutes);
 
-// Start Server
+// ✅ New: Banner upload/delete routes
+app.use("/api/banners/desktop", desktopBannerRoutes);
+app.use("/api/banners/mobile", mobileBannerRoutes);
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, '0.0.0.0', () => console.log(`Main backend running on port ${PORT}`));
+app.listen(PORT, "0.0.0.0", () => console.log(`Main backend running on port ${PORT}`));
