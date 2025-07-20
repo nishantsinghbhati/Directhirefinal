@@ -45,10 +45,8 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  resume: {
-    link: String,
-    filename: String
-  },
+ resume: { type: String }
+,
   createdAt: {
     type: Date,
     default: Date.now

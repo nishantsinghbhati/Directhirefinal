@@ -1,29 +1,45 @@
 import Job from "../schema/Job.js";
-import uploadToGoogleDrive from "../models/googleDriveUpload.js"
 import express from "express";
 import multer from "multer";
+import path from "path";
+import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
 import { sendWhatsApp } from "../whatsapp.js";
-
-
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
+// Change this to match your domain and route
+const BASE_URL = "https://www.directhire.in";
 
-// 🟢 Job Seeker Form
 router.post("/job", upload.single("resume"), async (req, res) => {
-   console.log("Body:", req.body);
-  console.log("File:", req.file); 
-  const { fullname, dob, email, phone, city, currentctc, expectedctc, gender, company, experience, education } = req.body;
-  const resumeFile = req.file;
-
   try {
-    let resumeData = null;
-    if (resumeFile) {
-      resumeData = await uploadToGoogleDrive(resumeFile);
+    const {
+      fullname,
+      dob,
+      email,
+      phone,
+      city,
+      currentctc,
+      expectedctc,
+      gender,
+      company,
+      experience,
+      education
+    } = req.body;
+
+    let resumeLink = null;
+
+    if (req.file) {
+      const ext = path.extname(req.file.originalname);
+      const filename = `${uuidv4()}${ext}`;
+      const savePath = path.join("/root/Directhirefinal/Backend/resumes", filename);
+      fs.writeFileSync(savePath, req.file.buffer);
+
+      // ✅ Generate private backend route link (not publicly served)
+      resumeLink = `${BASE_URL}/api/resumes/${filename}`;
     }
 
-    // Save to MongoDB
     const job = new Job({
       fullname,
       dob,
@@ -36,11 +52,11 @@ router.post("/job", upload.single("resume"), async (req, res) => {
       company,
       experience,
       education,
-      resume: resumeData
+      resume: resumeLink, // Save full secure download link
     });
+
     await job.save();
 
-    // Send WhatsApp notification
     await sendWhatsApp({
       fullname,
       dob,
@@ -58,12 +74,9 @@ router.post("/job", upload.single("resume"), async (req, res) => {
 
     res.status(200).json({ message: "Job seeker form submitted successfully" });
   } catch (err) {
-    console.error(err);
+    console.error("Job Form Error:", err);
     res.status(500).json({ error: "Failed to submit job seeker form" });
   }
 });
-
-
-
 
 export default router;
