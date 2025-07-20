@@ -11,10 +11,10 @@ import imageRoutes from "./routers/banner.js";
 import bannerRoutes from "./routers/banner2.js";
 import companylogosRoutes from "./routers/companyLogo.js";
 import blogRoutesRoutes from './routers/blogRoutes.js';
-
+import resumeDownloadRoutes from "./routers/resumeDownload.js";
 import desktopBannerRoutes from "./routers/desktopBannerRoutes.js";  // ✅ New
 import mobileBannerRoutes from "./routers/mobileBannerRoutes.js";    // ✅ New
-
+import resumeDeleteRoutes from "./routers/resumeDelete.js";
 dotenv.config();
 connectDB();
 const __filename = fileURLToPath(import.meta.url);
@@ -56,7 +56,8 @@ app.use("/apis/images", imageRoutes);
 app.use("/apis/banners", bannerRoutes);
 app.use("/apis/logos", companylogosRoutes);
 app.use("/api/blogs", blogRoutesRoutes);
-
+app.use("/api", resumeDownloadRoutes);
+app.use("/api", resumeDeleteRoutes);
 // ✅ New: Banner upload/delete routes
 app.use("/api/banners/desktop", desktopBannerRoutes);
 app.use("/api/banners/mobile", mobileBannerRoutes);

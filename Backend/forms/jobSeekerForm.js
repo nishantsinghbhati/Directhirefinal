@@ -13,7 +13,15 @@ const upload = multer({ storage: multer.memoryStorage() });
 const BASE_URL = "https://www.directhire.in";
 
 router.post("/job", upload.single("resume"), async (req, res) => {
+  
   try {
+     const allowedDomains = ["https://www.directhire.in"];
+    const origin = req.headers.origin || req.headers.referer;
+
+    if (!allowedDomains.some(domain => origin?.startsWith(domain))) {
+      return res.status(403).json({ error: "Unauthorized origin" });
+    }
+
     const {
       fullname,
       dob,
