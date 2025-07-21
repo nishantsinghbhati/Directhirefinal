@@ -174,7 +174,7 @@ const TestimonialSection = ({ testimonials = [] }) => {
                         ref={titleRef}
                         className="text-4xl font-[ClashDisplay-Semibold] text-gray-900 sm:text-5xl relative z-20"
                     >
-                        What Our <span className="text-blue-700">Users Say</span>
+                        What Our <span className="text-blue-700">Clients Say</span>
                     </h2>
                     <p
                         ref={subtitleRef}
