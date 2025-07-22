@@ -1,9 +1,10 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { verifyToken } from "../middleware/auth.js"; 
+import { verifyToken } from "../middleware/auth.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -11,15 +12,27 @@ const __dirname = dirname(__filename);
 const router = express.Router();
 const mobileDir = path.join(__dirname, '../banners/mobile');
 
-// Upload Mobile Banner
-router.post('/upload',verifyToken, (req, res) => {
-  if (!req.files || !req.files.banner) {
-    return res.status(400).json({ message: 'No file uploaded' });
-  }
+// Make sure the directory exists
+if (!fs.existsSync(mobileDir)) {
+  fs.mkdirSync(mobileDir, { recursive: true });
+}
 
-  const file = req.files.banner;
+// Multer storage config
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, mobileDir);
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, 'banner' + ext); // Save as banner.jpg or banner.png
+  },
+});
+
+const upload = multer({ storage });
+
+// ✅ GET All Mobile Banners
 router.get('/', (req, res) => {
-  fs.readdir(desktopDir, (err, files) => {
+  fs.readdir(mobileDir, (err, files) => {
     if (err) return res.status(500).json({ message: 'Failed to read banners' });
 
     const urls = files.map(file => ({
@@ -30,18 +43,22 @@ router.get('/', (req, res) => {
     res.json(urls);
   });
 });
-  // Optional: Get file extension (jpg/png) from uploaded file
-  const extension = path.extname(file.name); // e.g., '.jpg'
-  const fixedFileName = 'banner' + extension; // Save as banner.jpg / banner.png
-  const filePath = path.join(mobileDir, fixedFileName);
 
-  file.mv(filePath, (err) => {
-    if (err) return res.status(500).json({ message: 'Upload failed' });
-    res.json({ success: true, filename: fixedFileName });
+// ✅ Upload Mobile Banner using multer
+router.post('/upload', verifyToken, upload.single('banner'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: 'No file uploaded' });
+  }
+
+  res.json({
+    success: true,
+    filename: req.file.filename,
+    url: `https://www.api.directhire.in/static/banners/mobile/${req.file.filename}`,
   });
 });
-// Delete Mobile Banner
-router.delete('/:filename',verifyToken, (req, res) => {
+
+// ✅ Delete Mobile Banner
+router.delete('/:filename', verifyToken, (req, res) => {
   const filePath = path.join(mobileDir, req.params.filename);
 
   fs.unlink(filePath, (err) => {
