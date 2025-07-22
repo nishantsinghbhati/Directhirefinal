@@ -9,7 +9,18 @@ const __dirname = dirname(__filename);
 
 const router = express.Router();
 const desktopDir = path.join(__dirname, '../banners/desktop');
+router.get('/', (req, res) => {
+  fs.readdir(desktopDir, (err, files) => {
+    if (err) return res.status(500).json({ message: 'Failed to read banners' });
 
+    const urls = files.map(file => ({
+      filename: file,
+      url: `https://www.api.directhire.in/static/banners/desktop/${file}`
+    }));
+
+    res.json(urls);
+  });
+});
 // Upload Desktop Banner
 router.post('/upload',verifyToken, (req, res) => {
   if (!req.files || !req.files.banner) {

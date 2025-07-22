@@ -18,7 +18,18 @@ router.post('/upload',verifyToken, (req, res) => {
   }
 
   const file = req.files.banner;
+router.get('/', (req, res) => {
+  fs.readdir(desktopDir, (err, files) => {
+    if (err) return res.status(500).json({ message: 'Failed to read banners' });
 
+    const urls = files.map(file => ({
+      filename: file,
+      url: `https://www.api.directhire.in/static/banners/mobile/${file}`
+    }));
+
+    res.json(urls);
+  });
+});
   // Optional: Get file extension (jpg/png) from uploaded file
   const extension = path.extname(file.name); // e.g., '.jpg'
   const fixedFileName = 'banner' + extension; // Save as banner.jpg / banner.png
