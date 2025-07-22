@@ -10,7 +10,7 @@ const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Change this to match your domain and route
-const BASE_URL = "https://www.directhire.in";
+const BASE_URL = "https://www.api.directhire.in";
 
 router.post("/job", upload.single("resume"), async (req, res) => {
   
