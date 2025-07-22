@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./models/db.js";
-import fileUpload from "express-fileupload"; // ✅ New
+
 import { fileURLToPath } from "url";
 import path from "path";
 import { dirname } from "path";
@@ -19,7 +19,7 @@ dotenv.config();
 connectDB();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const app = express();
+
 app.use(fileUpload());
 const allowedOrigins = [
     'https://www.directhire.in' ,

@@ -4,9 +4,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { verifyToken } from "../middleware/auth.js"; 
+import fileUpload from "express-fileupload"; 
+const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
+app.use(fileUpload());
 const router = express.Router();
 const desktopDir = path.join(__dirname, '../banners/desktop');
 router.get('/', (req, res) => {
