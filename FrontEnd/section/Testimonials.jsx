@@ -140,7 +140,7 @@ const LazySwiper = ({ testimonials }) => {
 };
 
 // === Main Testimonial Section ===
-const TestimonialSection = ({ testimonials = [] }) => {
+const TestimonialSection = ({ testimonials = [], headingText }) => {
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
@@ -166,6 +166,12 @@ const TestimonialSection = ({ testimonials = [] }) => {
 
     if (testimonials.length === 0) return null;
 
+    // fallback heading
+    const title = headingText || "What Our Clients Say";
+    const words = title.split(" ");
+    const lastTwo = words.splice(-2).join(" "); // grab last 2 words
+    const rest = words.join(" ");
+
     return (
         <section ref={sectionRef} className="py-16 relative z-30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,7 +180,7 @@ const TestimonialSection = ({ testimonials = [] }) => {
                         ref={titleRef}
                         className="text-4xl font-[ClashDisplay-Semibold] text-gray-900 sm:text-5xl relative z-20"
                     >
-                        What Our <span className="text-blue-700">Clients Say</span>
+                        {rest} <span className="text-blue-700">{lastTwo}</span>
                     </h2>
                     <p
                         ref={subtitleRef}

@@ -276,7 +276,7 @@ export default function JobSeekerForm() {
         </div>
       </div>
 
-      <TestimonialSection testimonials={candidatereviews} />
+      <TestimonialSection testimonials={candidatereviews} headingText="What Our Candidates Say" />
       <Footer />
     </section>
   );
