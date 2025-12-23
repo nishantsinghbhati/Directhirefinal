@@ -41,11 +41,12 @@ const Home = () => {
         <meta property="og:description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/" />
-        <meta property="og:image" content="https://yourdomain.com/images/og-home.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content="/linkbanner.png" />        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Home | DirectHire" />
         <meta name="twitter:description" content="Explore DirectHire – an innovative resume builder platform that connects job seekers with employers." />
-        <meta name="twitter:image" content="https://yourdomain.com/images/og-home.jpg" />
+        <meta name="twitter:image" content="/linkbanner.png" />
       </Helmet>
 
       {!revealComplete && (
