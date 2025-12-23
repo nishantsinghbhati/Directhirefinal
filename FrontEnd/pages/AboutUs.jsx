@@ -74,11 +74,13 @@ const AboutUs = () => {
         <meta property="og:description" content="Discover Direct Hire's mission, story, and how we're revolutionizing the recruitment industry." />
         <meta property="og:url" content="https://yourdomain.com/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="/linkbanner.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | Direct Hire" />
         <meta name="twitter:description" content="Discover Direct Hire's story, mission, and the visionary team behind it." />
-        <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg" />
+        <meta name="twitter:image" content="/linkbanner.png" />
         <link rel="canonical" href="https://yourdomain.com/about" />
       </Helmet>
 <Navbar/>
